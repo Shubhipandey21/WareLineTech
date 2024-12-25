@@ -75,12 +75,7 @@ const Footer = () => {
             <p className="text-sm">
               Driving Digital Innovation with Data-Driven and AI-Integrated Mobile and Web App Development Services.
             </p>
-            <div className="flex items-center space-x-4 mt-4 lg:mt-0">
-              <img src="/path-to-clutch-badge.png" alt="Clutch Badge" className="h-10" />
-              <img src="/path-to-iso-certification.png" alt="ISO Certified" className="h-10" />
-              <img src="/path-to-aws-partner.png" alt="AWS Partner" className="h-10" />
-              <img src="/path-to-great-place-to-work.png" alt="Great Place to Work" className="h-10" />
-            </div>
+           
           </div>
         </div>
       </footer>
