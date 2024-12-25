@@ -12,11 +12,11 @@ const HeroSection = ({
   return (
     <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
       {/* Background with gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-purple-100/80 to-purple-200/80">
+      <div className="absolute inset-0 ">
         <img
           src={bgImage}
           alt="Background"
-          className="w-full h-full object-cover mix-blend-overlay"
+          className="w-full h-full object-cover"
         />
       </div>
 

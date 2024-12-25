@@ -12,8 +12,8 @@ export default function Home() {
             
             {/* Hero Section */}
             <HeroSection 
-                bgImage="https://images.pexels.com/photos/28186188/pexels-photo-28186188/free-photo-of-a-woman-with-an-umbrella-standing-on-the-street.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-                buttonColor="bg-yellow-600"
+                bgImage="https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&w=600"
+                buttonColor="bg-black"
                 buttonText="Let's Talk"
                 headingFirstPart="Digital Transformation"
                 headingHighlight="fuelled"
