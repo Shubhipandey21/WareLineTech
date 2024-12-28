@@ -1,18 +1,18 @@
+import React from 'react';
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import FAQSection from "@/components/FAQSection/FAQSection";
 import Process from "@/components/Process/Process";
 import ContactUsSection from "@/components/ContactUs/ContactUsSection";
+import Card from "@/components/Cardss/Card";
+import HeroSection from "@/components/HeroSection/HeroSection";
 
 export default function Home() {
-  return (
-    <>
-      <Navbar />
-      <Process />
-      <FAQSection />
-      <ContactUsSection />
-
-      <Footer />
-    </>
-  );
+    return (
+        <div className="min-h-screen">
+            <Process />
+            <FAQSection />
+            <ContactUsSection />
+        </div>
+    );
 }

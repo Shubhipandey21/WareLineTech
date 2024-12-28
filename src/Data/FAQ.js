@@ -4,7 +4,7 @@ const faqData = [
       items: [
         {
             "question": "How long has Wareline Tech been in the business?",
-            "answer": "Wareline Tech has been empowering businesses with innovative technology solutions for over [insert number of years] years. Our experience spans working with startups, established brands, and enterprises across various industries, delivering impactful digital solutions."
+            "answer": "Wareline Tech has been empowering businesses with innovative technology solutions for over 5 years. Our experience spans working with startups, established brands, and enterprises across various industries, delivering impactful digital solutions."
           },
           {
             "question": "What types of development services does Wareline Tech offer?",
