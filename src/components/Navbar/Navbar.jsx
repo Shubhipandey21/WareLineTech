@@ -20,6 +20,10 @@ const Navbar = () => {
       { name: "Cloud", route: "/services/cloud" },
       { name: "AI/ML", route: "/services/ai-ml" },
       { name: "Enterprise Level Solutions", route: "/services/enterprise-solutions" },
+      { name: "iOS", route:"/services/iOS"},
+      { name: "Android" , route: "/services/android"},
+      { name: "Flutter" , route: "/services/flutter"},
+      { name: "React Native", route: "/services/react-native"}
     ],
     industries: [
       { name: "Healthcare", route: "/industries/healthcare" },
