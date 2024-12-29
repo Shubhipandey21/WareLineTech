@@ -2,14 +2,14 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { X } from "lucide-react";
+import { X, ChevronDown } from "lucide-react";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdown, setDropdown] = useState(null);
 
   const toggleMenu = () => setMenuOpen((prev) => !prev);
-  
+
   const toggleDropdown = (menu) =>
     setDropdown((prev) => (prev === menu ? null : menu));
 
@@ -62,7 +62,7 @@ const Navbar = () => {
                 {item.name}
               </Link>
               {dropdownItems[item.name.toLowerCase()] && (
-                <ul className="absolute  left-0 hidden group-hover:block bg-white shadow-lg mt-2 p-4 w-48 z-50">
+                <ul className="absolute left-0 hidden group-hover:block bg-white shadow-lg mt-2 p-4 w-48 z-50">
                   {dropdownItems[item.name.toLowerCase()].map((subItem) => (
                     <li key={subItem.name}>
                       <Link
@@ -102,56 +102,55 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Menu Links */}
-            <div className="flex-grow flex flex-col items-center justify-center space-y-6 text-xl">
-              <Link 
-                href="/case-studies" 
-                className="text-black hover:text-blue-600"
-                onClick={() => setMenuOpen(false)}
-              >
-                Case Studies
-              </Link>
-              <Link 
-                href="/services" 
-                className="text-black hover:text-blue-600"
-                onClick={() => setMenuOpen(false)}
-              >
-                Services
-              </Link>
-              <Link 
-                href="/hire-developers" 
-                className="text-black hover:text-blue-600"
-                onClick={() => setMenuOpen(false)}
-              >
-                Hire Developers
-              </Link>
-              <Link 
-                href="/industries" 
-                className="text-black hover:text-blue-600"
-                onClick={() => setMenuOpen(false)}
-              >
-                Industries
-              </Link>
-              <Link 
-                href="/resources" 
-                className="text-black hover:text-blue-600"
-                onClick={() => setMenuOpen(false)}
-              >
-                Resources
-              </Link>
-              <Link 
-                href="/company" 
-                className="text-black hover:text-blue-600"
-                onClick={() => setMenuOpen(false)}
-              >
-                Company
-              </Link>
-              <Link 
-                href="/contact-us" 
-                className="text-black hover:text-blue-600"
-                onClick={() => setMenuOpen(false)}
-              >
-                Contact Us
-              </Link>
+            <div className="flex-grow flex flex-col p-4">
+              {[
+                { name: "Case Studies", route: "/case-studies" },
+                { name: "Services", route: "/services" },
+                { name: "Industries", route: "/industries" },
+                { name: "Hire Developers", route: "/hire-developers" },
+                { name: "Company", route: "/company" },
+                { name: "Press", route: "/press" },
+                { name: "Contact Us", route: "/contact-us" },
+              ].map((item) => (
+                <div key={item.name} className="mb-4">
+                  <div
+                    className="flex justify-between items-center text-xl font-bold cursor-pointer"
+                    onClick={() =>
+                      dropdownItems[item.name.toLowerCase()]
+                        ? toggleDropdown(item.name.toLowerCase())
+                        : setMenuOpen(false)
+                    }
+                  >
+                    <Link href={item.route} className="text-black hover:text-blue-600">
+                      {item.name}
+                    </Link>
+                    {dropdownItems[item.name.toLowerCase()] && (
+                      <ChevronDown
+                        size={20}
+                        className={`transform transition-transform ${
+                          dropdown === item.name.toLowerCase() ? "rotate-180" : ""
+                        }`}
+                      />
+                    )}
+                  </div>
+                  {/* Dropdown for Mobile */}
+                  {dropdown === item.name.toLowerCase() && (
+                    <ul className="mt-2 ml-4">
+                      {dropdownItems[item.name.toLowerCase()].map((subItem) => (
+                        <li key={subItem.name} className="mb-2">
+                          <Link
+                            href={subItem.route}
+                            className="text-gray-700 hover:text-blue-600"
+                            onClick={() => setMenuOpen(false)}
+                          >
+                            {subItem.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))}
             </div>
 
             {/* Social Links */}
