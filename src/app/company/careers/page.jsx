@@ -1,10 +1,10 @@
+'use client'
 
+import CareerForm from "@/components/CareerForm/CareerForm"; 
 
 const Page = () => {
     return (
-        <div>
-            <h1>Careers</h1>
-        </div>
+        <CareerForm />
     );
 }
 export default Page;
