@@ -11,7 +11,9 @@ export default {
   	extend: {
   		colors: {
   			background: 'var(--background)',
-  			foreground: 'var(--foreground)'
+  			foreground: 'var(--foreground)', 
+			  gradientStart: "#0f172a",
+			  gradientEnd: "#1e293b",
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
