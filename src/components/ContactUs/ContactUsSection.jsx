@@ -1,8 +1,17 @@
 import React from "react";
 
-const ContactUsSection = () => {
+const ContactUsSection = ({
+  title,
+  subtitle,
+  description,
+  buttonText,
+  highlightText,
+  highlightGradient, // New prop for gradient colors of the highlighted text
+  buttonGradientFrom, // New prop for button gradient start color
+  buttonGradientTo, // New prop for button gradient end color
+}) => {
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-screen bg-white overflow-hidden">
+    <div className="relative flex flex-col items-center justify-center min-h-[60vh] bg-white overflow-hidden">
       <div className="absolute inset-0">
         <svg
           className="w-full h-full"
@@ -18,13 +27,28 @@ const ContactUsSection = () => {
         </svg>
       </div>
       <div className="relative z-10 max-w-3xl mx-auto text-center">
-        <h2 className="text-sm font-bold text-gray-800 uppercase">Get In Touch</h2>
+        <h2 className="text-sm font-bold text-gray-800 uppercase">{title}</h2>
         <h1 className="mt-4 text-3xl font-bold leading-tight text-gray-900 sm:text-4xl">
-          Ready to <span className="text-purple-600">transform your vision</span> into reality?
+          {subtitle}
         </h1>
-        <p className="mt-4 text-gray-600">Let’s get started on your project!</p>
-        <button className="px-6 py-3 mt-6 text-white bg-purple-600 rounded-full hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500">
-          Request A Proposal
+        <p className="mt-4 text-gray-600">
+          {description}{" "}
+          <span
+            className={`bg-clip-text text-transparent font-bold`}
+            style={{
+              backgroundImage: `linear-gradient(to right, ${highlightGradient.from}, ${highlightGradient.to})`,
+            }}
+          >
+            {highlightText}
+          </span>
+        </p>
+        <button
+          className="px-6 py-3 mt-6 text-white rounded-full focus:outline-none focus:ring-2"
+          style={{
+            backgroundImage: `linear-gradient(to right, ${buttonGradientFrom}, ${buttonGradientTo})`,
+          }}
+        >
+          {buttonText}
         </button>
       </div>
     </div>

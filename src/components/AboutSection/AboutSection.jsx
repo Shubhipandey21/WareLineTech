@@ -35,12 +35,12 @@ const AboutSection = ({ imageSrc, content }) => {
       </div>
 
       {/* Image Section */}
-      <div className="lg:w-1/2 w-full max-w-xl flex justify-center items-center">
+      <div className="lg:w-1/2 w-full max-w-xl flex justify-center items-center h-1/2">
         <Image
           src={imageSrc}
           alt="About Section Image"
-          width={1000}
-          height={1200}
+          width={800}
+          height={700}
           className="rounded-lg"
         />
       </div>
