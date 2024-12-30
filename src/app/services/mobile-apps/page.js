@@ -1,12 +1,9 @@
 import HeroSection from "@/components/ServicesHeroSection/ServicesHeroSection";
 import AboutSection from "@/components/ServicesAbout/ServicesAbout";
-import Navbar from "@/components/Navbar/Navbar";
-import Footer from "@/components/Footer/Footer";
 import Image from "next/image";
 export default function MobileApps() {
     return (
       <>
-         <Navbar />
         <HeroSection
           gradient="from-purple-200 to-slate-200"
           title="Transform Ideas into Intelligent Apps with ML Application Development Services"
@@ -20,7 +17,7 @@ export default function MobileApps() {
         image="/ServicesImages/MobileAppsImg/MobileApssAbout.png" // Update with the actual image path
         bgColor="#F9FAFB" // Example light gray background
       />
-        <Footer />
       </>
     )
-  }
+}
+  
