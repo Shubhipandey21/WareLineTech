@@ -116,7 +116,7 @@ const faqData = [
         answer:
           "Yes, we provide ongoing support and maintenance services to ensure your app remains secure, updated, and fully functional, adapting to evolving market needs.",
       },
-    ];
+    ]
 
 const methodologyData = {
   heading: "eCommerce App Development Methodology",

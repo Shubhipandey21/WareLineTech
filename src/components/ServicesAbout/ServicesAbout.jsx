@@ -1,23 +1,26 @@
-import React from "react";
+import Image from 'next/image';
 
-const AboutSection = ({ title, description, image, bgColor }) => {
+const AboutSection = ({ heading, description, imageSrc }) => {
   return (
-    <div
-      className={`flex flex-col lg:flex-row items-center p-8 lg:p-16`}
-      style={{ backgroundColor: bgColor }}
-    >
-      {/* Text Section */}
-      <div className="lg:w-1/2 text-center lg:text-left space-y-4">
-        <h2 className="text-3xl font-bold text-gray-800">{title}</h2>
-        <p className="text-gray-600">{description}</p>
+    <div className="flex  items-center justify-center min-h-[80vh] bg-gradient-to-r from-gray-300 to-gray-100 p-8 md:p-16 rounded-xl shadow-lg space-y-8">
+      {/* Text Content */}
+      <div className="w-full max-w-3xl text-center space-y-6">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800 leading-tight">
+          {heading}
+        </h2>
+        <p className="text-lg text-gray-600 leading-relaxed">
+          {description}
+        </p>
       </div>
 
-      {/* Image Section */}
-      <div className="lg:w-1/2 mt-8 lg:mt-0 flex justify-center">
-        <img
-          src={image}
-          alt="About Section Illustration"
-          className="max-w-full h-auto"
+      {/* Image Content */}
+      <div className="w-full max-w-md flex justify-center transform hover:scale-105 transition duration-300">
+        <Image
+          src={imageSrc}
+          alt="About Section Image"
+          width={500}
+          height={500}
+          className="rounded-xl "
         />
       </div>
     </div>

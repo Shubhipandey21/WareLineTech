@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Slider from "react-slick";
+import { FaApple, FaAndroid, FaCodeBranch, FaLayerGroup, FaLock, FaSyncAlt, FaGlobe } from "react-icons/fa"; // Import react-icons
 
 export default function Carousel({ title, subtitle, data, settings }) {
   // Default settings for the carousel
@@ -32,7 +33,7 @@ export default function Carousel({ title, subtitle, data, settings }) {
               }}
             >
               <div
-                className="bg-gradient-to-b from-gray-700  to-slate-800  rounded-md text-center flex flex-col items-center"
+                className="bg-gradient-to-b from-gray-700 to-slate-800 rounded-md text-center flex flex-col items-center"
                 style={{
                   width: "280px",
                   height: "350px",
@@ -40,8 +41,18 @@ export default function Carousel({ title, subtitle, data, settings }) {
                   boxSizing: "border-box",
                 }}
               >
-                <div className="text-5xl text-center mb-4">
-                  <i className={item.icon}></i>
+                <div
+                  className="text-center mb-4 flex justify-center items-center"
+                  style={{
+                    width: "80px", // Circle diameter
+                    height: "80px", // Circle diameter
+                    borderRadius: "50%", // Make the div circular
+                    backgroundColor: "#2D3748", // Circle background color
+                    fontSize: "1.5rem", // Icon size (adjust as needed)
+                  }}
+                >
+                  {/* Render the icon component directly */}
+                  {item.icon}
                 </div>
                 <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
                 <p className="text-sm">{item.description}</p>

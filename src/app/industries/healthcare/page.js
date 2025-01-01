@@ -74,9 +74,7 @@ const carouselData = [
   },
 ];
 const faqData = [
-  {
-    category: "Healthcare App Development",
-    items: [
+  
       {
         question:
           "What services does WarelineTech Healthcare offer in app development?",
@@ -124,9 +122,7 @@ const faqData = [
         answer:
           "Yes, we provide ongoing support and maintenance services to ensure your app remains secure, updated, and fully functional, adapting to evolving needs and technologies.",
       },
-    ],
-  },
-];
+    ]
 const methodologyData = {
   heading: "Healthcare App Development Methodology",
   description:

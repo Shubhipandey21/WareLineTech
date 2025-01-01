@@ -2,12 +2,11 @@ import React from "react";
 import FAQSection from "@/components/FAQSection/FAQSection";
 import Process from "@/components/Process/Process";
 import ContactUsSection from "@/components/ContactUs/ContactUsSection";
+import HeroSection from "@/components/HeroSection/HeroSection";
 
 export default function Home() {
   const faqData = [
-    {
-      category: "General",
-      items: [
+   
         {
           question: "How long has Wareline Tech been in the business?",
           answer:
@@ -46,12 +45,25 @@ export default function Home() {
           answer:
             "At Wareline Tech, we prioritize transparent and regular communication. We assign a dedicated project manager to keep you updated on progress, gather feedback, and address any concerns. Additionally, we use tools like Slack, Trello, or email for seamless collaboration throughout the project.",
         },
-      ],
-    },
-  ];
+      ];
   
   return (
     <div className="min-h-screen">
+     <HeroSection
+        bgImage="https://cdn-ilajckf.nitrocdn.com/utLabjbGVjpaYDQkazoKnooguTzYeQRR/assets/images/optimized/rev-b8cf3a0/tamediacdn.techaheadcorp.com/wp-content/uploads/2024/10/15052418/bg@2x.png"
+        buttonColor="bg-black"
+        buttonText="Get Started"
+        headingHighlight="We craft tomorrow’s"
+        headingFirstPart=" digital experiences products, and ventures"
+        headingLastPart="Tailored for You"
+        subtext="The Success Stories of TechAhead, that brought light to many Startups and Global Brands."
+        floatingImages={[
+          "https://cdn-ilajckf.nitrocdn.com/utLabjbGVjpaYDQkazoKnooguTzYeQRR/assets/images/optimized/rev-b8cf3a0/tamediacdn.techaheadcorp.com/wp-content/uploads/2024/07/29054608/Group-16898@2x.png",
+          "https://cdn-ilajckf.nitrocdn.com/utLabjbGVjpaYDQkazoKnooguTzYeQRR/assets/images/optimized/rev-b8cf3a0/tamediacdn.techaheadcorp.com/wp-content/uploads/2024/07/29054607/Group-16897@2x.png",
+          "https://cdn-ilajckf.nitrocdn.com/utLabjbGVjpaYDQkazoKnooguTzYeQRR/assets/images/optimized/rev-b8cf3a0/tamediacdn.techaheadcorp.com/wp-content/uploads/2024/07/29054605/Group-16896@2x.png",
+        ]}
+      />
+
       <Process />
       <FAQSection data={faqData} />
       <ContactUsSection
