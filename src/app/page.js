@@ -3,12 +3,11 @@ import LandingPageHeroSection from "@/components/LandingPageHeroSection/LandingP
 import FAQSection from "@/components/FAQSection/FAQSection";
 import Process from "@/components/Process/Process";
 import ContactUsSection from "@/components/ContactUs/ContactUsSection";
+import Carousel from "@/components/Carousel/Carousel";
 
 export default function Home() {
   const faqData = [
-    {
-      category: "General",
-      items: [
+   
         {
           question: "How long has Wareline Tech been in the business?",
           answer:
@@ -47,9 +46,7 @@ export default function Home() {
           answer:
             "At Wareline Tech, we prioritize transparent and regular communication. We assign a dedicated project manager to keep you updated on progress, gather feedback, and address any concerns. Additionally, we use tools like Slack, Trello, or email for seamless collaboration throughout the project.",
         },
-      ],
-    },
-  ];
+      ]
 
   const slides = [
     {
@@ -134,7 +131,7 @@ export default function Home() {
       <LandingPageHeroSection
         slides={slides}
       />
-
+      <Carousel title="Our Process" />
       <Process />
       <FAQSection data={faqData} />
       <ContactUsSection

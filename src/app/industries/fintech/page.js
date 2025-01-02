@@ -76,9 +76,7 @@ const carouselData = [
   ];
   
   const faqData = [
-    {
-      category: "Fintech App Development",
-      items: [
+   
         {
           question: "What services does WarelineTech offer in fintech app development?",
           answer:
@@ -119,9 +117,7 @@ const carouselData = [
           answer:
             "Yes, we provide ongoing support and maintenance services to ensure your app remains secure, updated, and fully functional, adapting to evolving business and market needs.",
         },
-      ],
-    },
-  ];
+      ];
   const methodologyData = {
     heading: "Fintech App Development Methodology",
     description:
