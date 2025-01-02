@@ -3,7 +3,9 @@ import LandingPageHeroSection from "@/components/LandingPageHeroSection/LandingP
 import FAQSection from "@/components/FAQSection/FAQSection";
 import Process from "@/components/Process/Process";
 import ContactUsSection from "@/components/ContactUs/ContactUsSection";
-import Carousel from "@/components/Carousel/Carousel";
+import TestimonialSlider from "@/components/TestimonialSlider/TestimonialSlider";
+import Solution from "@/components/Solution/Solution";
+import FeaturedWork from "@/components/FeaturedWork/FeaturedWork";
 
 export default function Home() {
   const faqData = [
@@ -131,8 +133,11 @@ export default function Home() {
       <LandingPageHeroSection
         slides={slides}
       />
-      <Carousel title="Our Process" />
+      <TestimonialSlider />
+      <Solution />
+      <FeaturedWork/>
       <Process />
+
       <FAQSection data={faqData} />
       <ContactUsSection
         title="Contact Us"

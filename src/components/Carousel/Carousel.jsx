@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Slider from "react-slick";
-import { FaApple, FaAndroid, FaCodeBranch, FaLayerGroup, FaLock, FaSyncAlt, FaGlobe } from "react-icons/fa"; // Import react-icons
+// import { FaApple, FaAndroid, FaCodeBranch, FaLayerGroup, FaLock, FaSyncAlt, FaGlobe } from "react-icons/fa"; // Import react-icons
 
 export default function Carousel({ title, subtitle, data, settings }) {
   // Default settings for the carousel
