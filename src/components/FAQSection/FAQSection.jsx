@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState } from "react";
 
 const FaqSection = ({ data }) => {
@@ -10,7 +10,7 @@ const FaqSection = ({ data }) => {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white px-6 py-12">
-      <h1 className="text-5xl font-bold mb-8">Frequently Asked Questions</h1>
+      <h1 className="text-5xl font-bold mb-8 text-center">Frequently Asked Questions</h1>
       <div className="max-w-4xl mx-auto">
         {data.map((item, index) => (
           <div key={index} className="mb-4 border-b border-gray-700">
@@ -19,10 +19,10 @@ const FaqSection = ({ data }) => {
               onClick={() => toggleQuestion(index)}
             >
               <span>{item.question}</span>
-              <span>{openQuestion === index ? "-" : "+"}</span>
+              <span className="text-2xl">{openQuestion === index ? "-" : "+"}</span>
             </button>
             {openQuestion === index && (
-              <div className="pl-4 pb-3 text-gray-500">
+              <div className="pl-4 pb-3 text-gray-300 transition-all duration-300">
                 {item.answer}
               </div>
             )}

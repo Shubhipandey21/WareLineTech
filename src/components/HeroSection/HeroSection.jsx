@@ -8,7 +8,7 @@ const HeroSection = ({
   headingHighlight,
   headingLastPart,
   subtext,
-  floatingImages = [], // Array of image URLs for floating images
+  floatingImages = [],
 }) => {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">

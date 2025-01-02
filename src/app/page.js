@@ -1,8 +1,11 @@
 import React from "react";
+import LandingPageHeroSection from "@/components/LandingPageHeroSection/LandingPageHeroSection";
 import FAQSection from "@/components/FAQSection/FAQSection";
 import Process from "@/components/Process/Process";
 import ContactUsSection from "@/components/ContactUs/ContactUsSection";
-import HeroSection from "@/components/HeroSection/HeroSection";
+import TestimonialSlider from "@/components/TestimonialSlider/TestimonialSlider";
+import Solution from "@/components/Solution/Solution";
+import FeaturedWork from "@/components/FeaturedWork/FeaturedWork";
 
 export default function Home() {
   const faqData = [
@@ -45,32 +48,102 @@ export default function Home() {
           answer:
             "At Wareline Tech, we prioritize transparent and regular communication. We assign a dedicated project manager to keep you updated on progress, gather feedback, and address any concerns. Additionally, we use tools like Slack, Trello, or email for seamless collaboration throughout the project.",
         },
-      ];
-  
+      ]
+
+  const slides = [
+    {
+      backgroundImage: "https://images.pexels.com/photos/7130469/pexels-photo-7130469.jpeg?auto=compress&cs=tinysrgb&w=600",
+      rightSideImage: "https://cdn-ilajckf.nitrocdn.com/utLabjbGVjpaYDQkazoKnooguTzYeQRR/assets/images/optimized/rev-878bc3b/tamediacdn.techaheadcorp.com/wp-content/uploads/2024/12/04100036/home-banner-img.webp",
+      showButtons: true,
+      button1Text: "Case Study",
+      button1Color: "bg-black text-white",
+      button1HoverColor: "hover:bg-gray-200 hover:text-black",
+      button2Text: "Contact Us",
+      button2Gradient: "to right, #6b73ff, #000dff",
+      heading: "Transform Your Business",
+      highlightText: "with AI",
+      highlightTextColor: "text-purple-500",
+      subtext: "Leverage our AI-powered solutions to scale your business efficiently.",
+      smallText: "AI SOLUTIONS FOR ENTERPRISES",
+    },
+    {
+      backgroundImage: "https://img.freepik.com/free-vector/winter-blue-pink-gradient-background-vector_53876-117275.jpg?semt=ais_hybrid",
+      rightSideImage: "https://cdn-ilajckf.nitrocdn.com/utLabjbGVjpaYDQkazoKnooguTzYeQRR/assets/images/optimized/rev-878bc3b/tamediacdn.techaheadcorp.com/wp-content/uploads/2024/08/29052547/home_slide_5.webp",
+      showButtons: true,
+      button1Text: "Case Study",
+      button1Color: "bg-black text-white",
+      button1HoverColor: "hover:bg-gray-200 hover:text-black",
+      button2Text: "Contact Us",
+      button2Gradient: "to right, #00008B, #add8e6",
+      heading: "Achieve Your Goals2",
+      highlightText: "Efficiently",
+      highlightTextColor: "text-red-500",
+      subtext: "Discover our innovative solutions tailored to your needs.",
+      smallText: "INNOVATION & TECHNOLOGY",
+    },
+    {
+      backgroundImage: "https://images.pexels.com/photos/7130555/pexels-photo-7130555.jpeg?auto=compress&cs=tinysrgb&w=600",
+      rightSideImage: "https://cdn-ilajckf.nitrocdn.com/utLabjbGVjpaYDQkazoKnooguTzYeQRR/assets/images/optimized/rev-878bc3b/tamediacdn.techaheadcorp.com/wp-content/uploads/2024/08/29052547/home_slide_5.webp",
+      showButtons: true,
+      button1Text: "Case Study",
+      button1Color: "bg-black text-white",
+      button1HoverColor: "hover:bg-gray-200 hover:text-black",
+      button2Text: "Contact Us",
+      button2Gradient: "to right, #9d00ff, #feb47b",
+      heading: "Achieve Your Goals3",
+      highlightText: "Efficiently",
+      highlightTextColor: "text-red-500",
+      subtext: "Discover our innovative solutions tailored to your needs.",
+      smallText: "INNOVATION & TECHNOLOGY",
+    },
+    {
+      backgroundImage: "https://images.pexels.com/photos/7134986/pexels-photo-7134986.jpeg?auto=compress&cs=tinysrgb&w=600",
+      rightSideImage: "https://cdn-ilajckf.nitrocdn.com/utLabjbGVjpaYDQkazoKnooguTzYeQRR/assets/images/optimized/rev-878bc3b/tamediacdn.techaheadcorp.com/wp-content/uploads/2024/08/29052547/home_slide_5.webp",
+      showButtons: true,
+      button1Text: "Case Study",
+      button1Color: "bg-black text-white",
+      button1HoverColor: "hover:bg-gray-200 hover:text-black",
+      button2Text: "Contact Us",
+      button2Gradient: "to right, ##6395ee, #305cde",
+      heading: "Achieve Your Goals4",
+      highlightText: "Efficiently",
+      highlightTextColor: "text-red-500",
+      subtext: "Discover our innovative solutions tailored to your needs.",
+      smallText: "INNOVATION & TECHNOLOGY",
+    },
+    {
+      backgroundImage: "https://t4.ftcdn.net/jpg/04/10/97/01/240_F_410970129_lSm48mOmp1HnrP4vjXvrjs0u30mlZmtA.jpg",
+      rightSideImage: "https://cdn-ilajckf.nitrocdn.com/utLabjbGVjpaYDQkazoKnooguTzYeQRR/assets/images/optimized/rev-878bc3b/tamediacdn.techaheadcorp.com/wp-content/uploads/2024/08/29052547/home_slide_5.webp",
+      showButtons: true,
+      button1Text: "Case Study",
+      button1Color: "bg-black text-white",
+      button1HoverColor: "hover:bg-gray-200 hover:text-black",
+      button2Text: "Contact Us",
+      button2Gradient: "to right, #f2b949, #ff13f0",
+      heading: "Achieve Your Goals5",
+      highlightText: "Efficiently",
+      highlightTextColor: "text-red-500",
+      subtext: "Discover our innovative solutions tailored to your needs.",
+      smallText: "INNOVATION & TECHNOLOGY",
+    },
+  ];
+
   return (
     <div className="min-h-screen">
-     <HeroSection
-        bgImage="https://cdn-ilajckf.nitrocdn.com/utLabjbGVjpaYDQkazoKnooguTzYeQRR/assets/images/optimized/rev-b8cf3a0/tamediacdn.techaheadcorp.com/wp-content/uploads/2024/10/15052418/bg@2x.png"
-        buttonColor="bg-black"
-        buttonText="Get Started"
-        headingHighlight="We craft tomorrow’s"
-        headingFirstPart=" digital experiences products, and ventures"
-        headingLastPart="Tailored for You"
-        subtext="The Success Stories of TechAhead, that brought light to many Startups and Global Brands."
-        floatingImages={[
-          "https://cdn-ilajckf.nitrocdn.com/utLabjbGVjpaYDQkazoKnooguTzYeQRR/assets/images/optimized/rev-b8cf3a0/tamediacdn.techaheadcorp.com/wp-content/uploads/2024/07/29054608/Group-16898@2x.png",
-          "https://cdn-ilajckf.nitrocdn.com/utLabjbGVjpaYDQkazoKnooguTzYeQRR/assets/images/optimized/rev-b8cf3a0/tamediacdn.techaheadcorp.com/wp-content/uploads/2024/07/29054607/Group-16897@2x.png",
-          "https://cdn-ilajckf.nitrocdn.com/utLabjbGVjpaYDQkazoKnooguTzYeQRR/assets/images/optimized/rev-b8cf3a0/tamediacdn.techaheadcorp.com/wp-content/uploads/2024/07/29054605/Group-16896@2x.png",
-        ]}
+      <LandingPageHeroSection
+        slides={slides}
       />
-
+      <TestimonialSlider />
+      <Solution />
+      <FeaturedWork/>
       <Process />
+
       <FAQSection data={faqData} />
       <ContactUsSection
         title="Contact Us"
         subtitle="We'd love to hear from you!"
         description="Reach out to us for more information about our services."
-        buttonText="Get in Touch"
+        buttonText="Contact Us"
         highlightText="today!"
         highlightGradient={{ from: "#ff7eb3", to: "#ff758c" }}
         buttonGradientFrom="#8a2be2"
