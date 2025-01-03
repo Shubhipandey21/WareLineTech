@@ -1,5 +1,7 @@
 import HeroSection from "@/components/HeroSection/HeroSection"
 import ScheduleCall from "@/components/ScheduleCall/ScheduleCall"
+import BenefitsSection from "@/components/Benefit/BenefitSection"
+import DevTeam from "@/components/DevTeam/DevTeam"
 export default function HireDevelopers() {
     return (
         <>
@@ -17,7 +19,9 @@ export default function HireDevelopers() {
           "https://cdn-ilajckf.nitrocdn.com/utLabjbGVjpaYDQkazoKnooguTzYeQRR/assets/images/optimized/rev-b8cf3a0/tamediacdn.techaheadcorp.com/wp-content/uploads/2024/07/29054605/Group-16896@2x.png",
         ]}
       />
+      <DevTeam />
         <ScheduleCall />
+        <BenefitsSection />
     </>
     )
 

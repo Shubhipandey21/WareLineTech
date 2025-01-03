@@ -135,9 +135,9 @@ export default function Home() {
       />
       <TestimonialSlider />
       <Solution />
-      <FeaturedWork/>
+     
       <Process />
-
+      <FeaturedWork/>
       <FAQSection data={faqData} />
       <ContactUsSection
         title="Contact Us"

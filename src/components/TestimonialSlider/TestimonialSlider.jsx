@@ -51,7 +51,7 @@ const TestimonialSlider = () => {
                 <div className="text-white mb-4">
                     <h1 className="text-2xl font-bold mb-8 ml-10 text-left">REAL USERS, REAL TRANSFORMATION</h1>
                     <p className="text-4xl mb-6 text-left ml-10">
-                        Discover how TechAhead has{' '}
+                        Discover how Wareline Tech has{' '}
                         <span className="text-purple-400">transformed businesses</span> with
                         exceptional user experience design, innovative app development,
                         cutting-edge product optimization, and dedicated ongoing support.
