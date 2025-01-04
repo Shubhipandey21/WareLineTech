@@ -49,7 +49,7 @@ export default function MobileApps() {
     },
     {
       id: 5,
-      title: "dApp Development",
+      title: "DApp Development",
       description:
         "WarelineTech’s team of experts focuses on building secure, scalable, and decentralized applications for industries like gaming, healthcare, and finance. We transform your ideas into reliable, user-centric applications that provide exceptional experiences for users worldwide.",
       icon: <FaLock />, // dApp icon
@@ -205,8 +205,6 @@ const faqData = [
     "answer": "At Warelinetech, we provide mobile app development services to clients across the USA, including major cities like New York, San Francisco, Chicago, Los Angeles, and Miami. Our services are not limited to these cities, as we offer remote development solutions to clients nationwide, ensuring quality support wherever you are located."
   },
 ]
-
-
 
   return (
     <>

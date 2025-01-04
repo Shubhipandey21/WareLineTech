@@ -20,10 +20,10 @@ const Navbar = () => {
       { name: "Cloud", route: "/services/cloud" },
       { name: "AI/ML", route: "/services/ai-ml" },
       { name: "Enterprise Level Solutions", route: "/services/enterprise-solutions" },
-      { name: "iOS", route:"/services/iOS"},
-      { name: "Android" , route: "/services/android"},
-      { name: "Flutter" , route: "/services/flutter"},
-      { name: "React Native", route: "/services/react-native"}
+      { name: "iOS", route: "/services/iOS" },
+      { name: "Android", route: "/services/android" },
+      { name: "Flutter", route: "/services/flutter" },
+      { name: "React Native", route: "/services/react-native" },
     ],
     industries: [
       { name: "Healthcare", route: "/industries/healthcare" },
@@ -62,7 +62,7 @@ const Navbar = () => {
                 {item.name}
               </Link>
               {dropdownItems[item.name.toLowerCase()] && (
-                <ul className="absolute left-0 hidden group-hover:block bg-white shadow-lg mt-2 p-4 w-48 z-50">
+                <ul className="absolute left-0 top-full hidden group-hover:block bg-white shadow-lg p-4 w-48 z-50">
                   {dropdownItems[item.name.toLowerCase()].map((subItem) => (
                     <li key={subItem.name}>
                       <Link
@@ -85,7 +85,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Full Screen Mobile Menu */}
+      {/* Full-Screen Mobile Menu */}
       {menuOpen && (
         <div className="fixed inset-0 bg-white z-50 lg:hidden">
           <div className="flex flex-col h-full">
