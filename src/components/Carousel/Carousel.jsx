@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import Slider from "react-slick";
-// import { FaApple, FaAndroid, FaCodeBranch, FaLayerGroup, FaLock, FaSyncAlt, FaGlobe } from "react-icons/fa"; // Import react-icons
 
 export default function Carousel({ title, subtitle, data, settings }) {
   // Default settings for the carousel
@@ -9,7 +8,7 @@ export default function Carousel({ title, subtitle, data, settings }) {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 3, // Adjusted to fit larger cards
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
@@ -29,32 +28,31 @@ export default function Carousel({ title, subtitle, data, settings }) {
               key={index}
               className="flex justify-center"
               style={{
-                padding: "0 15px",
+                padding: "10px 20px", // Added more padding for spacing between cards
               }}
             >
               <div
-                className="bg-gradient-to-b from-gray-700 to-slate-800 rounded-md text-center flex flex-col items-center"
+                className="bg-gradient-to-b gap-6 from-gray-700 to-slate-800 rounded-md text-center flex flex-col items-center shadow-lg hover:shadow-xl transition-shadow"
                 style={{
-                  width: "280px",
-                  height: "350px",
-                  padding: "20px",
+                  width: "320px", // Increased card width
+                  height: "400px", // Increased card height
+                  padding: "24px",
                   boxSizing: "border-box",
                 }}
               >
                 <div
-                  className="text-center mb-4 flex justify-center items-center"
+                  className="text-center mb-6 flex justify-center items-center"
                   style={{
-                    width: "80px", // Circle diameter
-                    height: "80px", // Circle diameter
+                    width: "90px", // Circle diameter
+                    height: "90px", // Circle diameter
                     borderRadius: "50%", // Make the div circular
                     backgroundColor: "#2D3748", // Circle background color
-                    fontSize: "1.5rem", // Icon size (adjust as needed)
+                    fontSize: "2rem", // Icon size (adjust as needed)
                   }}
                 >
-                  {/* Render the icon component directly */}
                   {item.icon}
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
                 <p className="text-sm">{item.description}</p>
               </div>
             </div>

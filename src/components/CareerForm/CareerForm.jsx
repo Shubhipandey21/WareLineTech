@@ -1,267 +1,150 @@
-// import React, { useState } from "react";
-// import emailjs from "emailjs-com";
+'use client';
 
-// const CareerForm = () => {
-//   const [formData, setFormData] = useState({
-//     firstName: "",
-//     lastName: "",
-//     email: "",
-//     contactNumber: "",
-//     noticePeriod: "",
-//     additionalMessage: "",
-//     resume: null,
-//   });
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import emailjs from 'emailjs-com';
+import { useRouter } from 'next/navigation';
 
-//   const [formStatus, setFormStatus] = useState("");
+const CareerForm = () => {
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const [formData, setFormData] = useState({
+        firstName: '',
+        lastName: '',
+        company: '',
+        email: '',
+        phone: '',
+        message: '',
+    });
+    const router = useRouter();
+    const [formStatus, setFormStatus] = useState(""); // Feedback message
 
-//   const handleChange = (e) => {
-//     const { name, value } = e.target;
-//     setFormData({ ...formData, [name]: value });
-//   };
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
 
-//   const handleFileChange = (e) => {
-//     setFormData({ ...formData, resume: e.target.files[0] });
-//   };
+    const onSubmit = async (data) => {
+        try {
+            await emailjs.send(
+                'myth', // Replace with your EmailJS Service ID
+                'template_yq9t9a2', // Replace with your EmailJS Template ID
+                {
+                    ...data,
+                },
+                'tZxQ2uZY_Jj2DYBWm' // Replace with your EmailJS User ID
+            );
 
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     const formDataToSend = new FormData();
-//     Object.entries(formData).forEach(([key, value]) => {
-//       if (value) formDataToSend.append(key, value);
-//     });
+            setFormStatus("Your application has been submitted successfully!");
+            router.push('/thankyou'); // Redirect to the thank you page
+        } catch (error) {
+            console.error(error);
+            setFormStatus("Failed to submit the application. Please try again.");
+        }
+    };
 
-//     emailjs
-//       .sendForm(
-//         "your_service_id",
-//         "your_template_id",
-//         formDataToSend,
-//         "your_user_id"
-//       )
-//       .then(
-//         () => {
-//           setFormStatus("Your application has been submitted successfully.");
-//           setFormData({
-//             firstName: "",
-//             lastName: "",
-//             email: "",
-//             contactNumber: "",
-//             noticePeriod: "",
-//             additionalMessage: "",
-//             resume: null,
-//           });
-//         },
-//         (error) => {
-//           console.error(error);
-//           setFormStatus("There was an error submitting your application. Please try again later.");
-//         }
-//       );
-//   };
+    return (
+        <div className="w-full max-w-7xl mx-auto py-24">
+            <div className="flex flex-col items-center">
+                <div className="w-full md:w-2/3 flex flex-col space-y-6 text-center">
+                    <h1 className="text-black font-sans text-3xl md:text-5xl font-normal mb-10 leading-[1.2] tracking-[-1.2px]">
+                        Submit Your Resume
+                    </h1>
 
-//   const inputClasses = "p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white";
-//   const labelClasses = "mb-2 text-gray-700 font-medium";
+                    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {[{
+                                name: "firstName", label: "First Name", type: "text", validation: { required: "First Name is required" }
+                            },
+                            {
+                                name: "lastName", label: "Last Name", type: "text", validation: { required: "Last Name is required" }
+                            },
+                            {
+                                name: "company", label: "Company", type: "text"
+                            },
+                            {
+                                name: "email", label: "Email", type: "email", validation: {
+                                    required: "Email is required", pattern: { value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, message: "Invalid email address" }
+                                }
+                            },
+                            {
+                                name: "phone", label: "Phone Number", type: "tel", validation: { required: "Phone Number is required" }
+                            }
+                            ].map(({ name, label, type, validation }) => (
+                                <div className="relative" key={name}>
+                                    <input
+                                        {...register(name, validation)}
+                                        name={name}
+                                        type={type}
+                                        value={formData[name]}
+                                        onChange={handleInputChange}
+                                        className="peer h-16 border-gray-300 p-2 rounded-md w-full"
+                                        placeholder=" " // Use a blank space as the placeholder
+                                    />
+                                    <label
+                                        className={`absolute left-2 top-4 text-gray-400 transition-all text-base ${formData[name] ? "opacity-0 -top-2 text-sm" : "opacity-100"
+                                            }`}
+                                    >
+                                        {label}
+                                    </label>
+                                    <div className="w-3/4 border-b border-gray-300 mt-1"></div>
+                                    {errors[name] && <span className="text-red-500 text-sm">{errors[name].message}</span>}
+                                </div>
+                            ))}
+                        </div>
 
-//   return (
-//     <div className="relative flex flex-col items-center justify-center min-h-[60vh] bg-white overflow-hidden">
-//       <div className="absolute inset-0">
-//         <svg
-//           className="w-full h-full"
-//           xmlns="http://www.w3.org/2000/svg"
-//           viewBox="0 0 1440 320"
-//           preserveAspectRatio="none"
-//         >
-//           <path
-//             fill="#f8f8ff"
-//             fillOpacity="0.8"
-//             d="M0,96L48,85.3C96,75,192,53,288,69.3C384,85,480,139,576,149.3C672,160,768,128,864,133.3C960,139,1056,181,1152,181.3C1248,181,1344,139,1392,117.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-//           />
-//         </svg>
-//       </div>
-
-//       <div className="relative z-10 w-full max-w-3xl mx-auto text-center px-4">
-//         <h2 className="text-sm font-bold text-gray-800 uppercase">Career Opportunities</h2>
-//         <h1 className="mt-4 text-3xl font-bold leading-tight text-gray-900 sm:text-4xl">
-//           Join Our Team
-//         </h1>
-//         <p className="mt-4 text-gray-600">
-//           Take the next step in your career journey with us
-//         </p>
-
-//         <form onSubmit={handleSubmit} className="mt-8 space-y-6 text-left">
-//           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-//             <div className="flex flex-col">
-//               <label htmlFor="firstName" className={labelClasses}>First Name</label>
-//               <input
-//                 type="text"
-//                 id="firstName"
-//                 name="firstName"
-//                 value={formData.firstName}
-//                 onChange={handleChange}
-//                 required
-//                 className={inputClasses}
-//               />
-//             </div>
-
-//             <div className="flex flex-col">
-//               <label htmlFor="lastName" className={labelClasses}>Last Name</label>
-//               <input
-//                 type="text"
-//                 id="lastName"
-//                 name="lastName"
-//                 value={formData.lastName}
-//                 onChange={handleChange}
-//                 required
-//                 className={inputClasses}
-//               />
-//             </div>
-//           </div>
-
-//           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-//             <div className="flex flex-col">
-//               <label htmlFor="email" className={labelClasses}>Email</label>
-//               <input
-//                 type="email"
-//                 id="email"
-//                 name="email"
-//                 value={formData.email}
-//                 onChange={handleChange}
-//                 required
-//                 className={inputClasses}
-//               />
-//             </div>
-
-//             <div className="flex flex-col">
-//               <label htmlFor="contactNumber" className={labelClasses}>Contact Number</label>
-//               <input
-//                 type="tel"
-//                 id="contactNumber"
-//                 name="contactNumber"
-//                 value={formData.contactNumber}
-//                 onChange={handleChange}
-//                 required
-//                 className={inputClasses}
-//               />
-//             </div>
-//           </div>
-
-//           <div className="flex flex-col">
-//             <label htmlFor="noticePeriod" className={labelClasses}>Notice Period</label>
-//             <input
-//               type="text"
-//               id="noticePeriod"
-//               name="noticePeriod"
-//               value={formData.noticePeriod}
-//               onChange={handleChange}
-//               required
-//               className={inputClasses}
-//             />
-//           </div>
-
-//           <div className="flex flex-col">
-//             <label htmlFor="additionalMessage" className={labelClasses}>Additional Message</label>
-//             <textarea
-//               id="additionalMessage"
-//               name="additionalMessage"
-//               value={formData.additionalMessage}
-//               onChange={handleChange}
-//               rows="4"
-//               className={inputClasses}
-//             ></textarea>
-//           </div>
-
-//           <div className="flex flex-col">
-//             <label htmlFor="resume" className={labelClasses}>Resume</label>
-//             <input
-//               type="file"
-//               id="resume"
-//               name="resume"
-//               onChange={handleFileChange}
-//               accept=".pdf,.doc,.docx"
-//               required
-//               className={`${inputClasses} file:mr-4 file:py-2 file:px-4 file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100`}
-//             />
-//           </div>
-
-//           <button
-//             type="submit"
-//             className="w-full px-6 py-3 text-white rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200 hover:opacity-90"
-//             style={{
-//               backgroundImage: "linear-gradient(to right, #4facfe, #00f2fe)",
-//             }}
-//           >
-//             Submit Application
-//           </button>
-//         </form>
-
-//         {formStatus && (
-//           <div className="mt-4 p-4 rounded-lg bg-gray-50">
-//             <p className="text-gray-700 font-medium">{formStatus}</p>
-//           </div>
-//         )}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default CareerForm;
+                        {/* Minimal Resume Section */}
+                        <div className="relative space-y-2">
+                            <input
+                                {...register("resume", { required: "Resume is required" })}
+                                type="file"
+                                name="resume"
+                                accept=".pdf,.doc,.docx"
+                                id="resume" // Add an id to the file input
+                                className="hidden" // Hide the default file input
+                            />
+                            <label
+                                htmlFor="resume" // This links the label to the file input by matching the id
+                                className="peer h-16 border-gray-300 p-2 rounded-md w-full cursor-pointer bg-gray-100 text-gray-600 text-center flex items-center justify-center"
+                            >
+                                {formData.resume ? formData.resume.name : "Upload Resume"} {/* Show file name or placeholder text */}
+                            </label>
+                            <div className="w-full border-b border-gray-300 mt-1"></div>
+                            {errors.resume && <span className="text-red-500 text-sm">{errors.resume.message}</span>}
+                        </div>
 
 
 
+                        <div className="relative space-y-2">
+                            <textarea
+                                {...register("message", { required: "Message is required" })}
+                                name="message"
+                                value={formData.message}
+                                onChange={handleInputChange}
+                                className="peer min-h-[150px] border-gray-300 p-2 rounded-md w-full"
+                                placeholder=" " // Use a blank space as the placeholder
+                            />
+                            <label
+                                className={`absolute left-2 top-4 text-gray-400 transition-all text-base ${formData.message ? "opacity-0 -top-2 text-sm" : "opacity-100"
+                                    }`}
+                            >
+                                How can we help you?
+                            </label>
+                            <div className="w-4/5 border-b border-gray-300 mt-1"></div>
+                            {errors.message && <span className="text-red-500 text-sm">{errors.message.message}</span>}
+                        </div>
 
-import React from "react";
+                        <button type="submit" className="bg-black text-white px-8 py-3 rounded hover:bg-gray-800 transition-colors">
+                            SUBMIT
+                        </button>
+                    </form>
 
-const ContactUsSection = ({
-  title,
-  subtitle,
-  description,
-  buttonText,
-  highlightText,
-  highlightGradient, // New prop for gradient colors of the highlighted text
-  buttonGradientFrom, // New prop for button gradient start color
-  buttonGradientTo, // New prop for button gradient end color
-}) => {
-  return (
-    <div className="relative flex flex-col items-center justify-center min-h-[60vh] bg-white overflow-hidden">
-      <div className="absolute inset-0">
-        <svg
-          className="w-full h-full"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1440 320"
-          preserveAspectRatio="none"
-        >
-          <path
-            fill="#f8f8ff"
-            fillOpacity="0.8"
-            d="M0,96L48,85.3C96,75,192,53,288,69.3C384,85,480,139,576,149.3C672,160,768,128,864,133.3C960,139,1056,181,1152,181.3C1248,181,1344,139,1392,117.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-          />
-        </svg>
-      </div>
-      <div className="relative z-10 max-w-3xl mx-auto text-center">
-        <h2 className="text-sm font-bold text-gray-800 uppercase">{title}</h2>
-        <h1 className="mt-4 text-3xl font-bold leading-tight text-gray-900 sm:text-4xl">
-          {subtitle}
-        </h1>
-        <p className="mt-4 text-gray-600">
-          {description}{" "}
-          <span
-            className={`bg-clip-text text-transparent font-bold`}
-            style={{
-              backgroundImage: `linear-gradient(to right, ${highlightGradient.from}, ${highlightGradient.to})`,
-            }}
-          >
-            {highlightText}
-          </span>
-        </p>
-        <button
-          className="px-6 py-3 mt-6 text-white rounded-full focus:outline-none focus:ring-2"
-          style={{
-            backgroundImage: `linear-gradient(to right, ${buttonGradientFrom}, ${buttonGradientTo})`,
-          }}
-        >
-          {buttonText}
-        </button>
-      </div>
-    </div>
-  );
+                    {formStatus && (
+                        <p className="mt-6 text-sm text-gray-600">{formStatus}</p>
+                    )}
+                </div>
+            </div>
+        </div>
+    );
 };
 
-export default ContactUsSection;
+export default CareerForm;
