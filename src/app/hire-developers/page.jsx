@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState, useEffect } from 'react';
 import dynamic from "next/dynamic";
 import HeroSection from "@/components/HeroSection/HeroSection";
@@ -8,21 +9,24 @@ import DevTeam from "@/components/DevTeam/DevTeam";
 import ComparisonTable from "@/components/ComparisonTable/ComparisonTable";
 import ContactUsSection from "@/components/ContactUs/ContactUsSection";
 
+// Dynamically load the HeroSection component without SSR
 const HireHeroSection = dynamic(() => import('@/components/HeroSection/HeroSection'), {
   ssr: false, // Disable server-side rendering for this component
 });
+
 export default function HireDevelopers() {
   const [isClient, setIsClient] = useState(false);
 
+  // Ensure that useEffect runs only on the client-side
   useEffect(() => {
-    // This will run only in the browser after the component mounts
     setIsClient(true);
   }, []);
 
-  // If not client-side, return nothing or a loading indicator
+  // If the page is being rendered on the server, return a loading state
   if (!isClient) {
-    return null; // Or a loading spinner
+    return <div>Loading...</div>; // Or a custom loader
   }
+
   return (
     <>
       <HireHeroSection
