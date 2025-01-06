@@ -1,5 +1,5 @@
 "use client";
-
+import React, { useState } from 'react';
 import dynamic from "next/dynamic";
 import HeroSection from "@/components/HeroSection/HeroSection";
 import ScheduleCall from "@/components/ScheduleCall/ScheduleCall";
