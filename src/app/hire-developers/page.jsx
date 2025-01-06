@@ -6,6 +6,15 @@ import DevTeam from "@/components/DevTeam/DevTeam"
 import ComparisonTable from "@/components/ComparisonTable/ComparisonTable"
 import ContactUsSection from "@/components/ContactUs/ContactUsSection"
 export default function HireDevelopers() {
+  // Wrap any client-side logic in the `typeof window` check
+  const floatingImages =
+    typeof window !== "undefined"
+      ? [
+          "https://cdn-ilajckf.nitrocdn.com/utLabjbGVjpaYDQkazoKnooguTzYeQRR/assets/images/optimized/rev-b8cf3a0/tamediacdn.techaheadcorp.com/wp-content/uploads/2024/07/29054608/Group-16898@2x.png",
+          "https://cdn-ilajckf.nitrocdn.com/utLabjbGVjpaYDQkazoKnooguTzYeQRR/assets/images/optimized/rev-b8cf3a0/tamediacdn.techaheadcorp.com/wp-content/uploads/2024/07/29054607/Group-16897@2x.png",
+          "https://cdn-ilajckf.nitrocdn.com/utLabjbGVjpaYDQkazoKnooguTzYeQRR/assets/images/optimized/rev-b8cf3a0/tamediacdn.techaheadcorp.com/wp-content/uploads/2024/07/29054605/Group-16896@2x.png",
+        ]
+      : [];
     return (
         <>
      <HeroSection
