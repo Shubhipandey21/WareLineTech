@@ -11,8 +11,18 @@ import ContactUsSection from "@/components/ContactUs/ContactUsSection";
 const HireHeroSection = dynamic(() => import('@/components/HeroSection/HeroSection'), {
   ssr: false, // Disable server-side rendering for this component
 });
-
 export default function HireDevelopers() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    // This will run only in the browser after the component mounts
+    setIsClient(true);
+  }, []);
+
+  // If not client-side, return nothing or a loading indicator
+  if (!isClient) {
+    return null; // Or a loading spinner
+  }
   return (
     <>
       <HireHeroSection
