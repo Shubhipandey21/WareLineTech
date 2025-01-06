@@ -87,7 +87,7 @@ const LandingPageHeroSection = ({ slides = [] }) => {
             <img
               src={rightSideImage}
               alt="Hero Right Side"
-              className="w-full h-auto object-cover rounded-3xl shadow-lg"
+              className="w-full h-auto object-cover rounded-3xl "
             />
           </div>
         )}

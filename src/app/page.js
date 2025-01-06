@@ -53,7 +53,7 @@ export default function Home() {
   const slides = [
     {
       backgroundImage: "https://images.pexels.com/photos/7130469/pexels-photo-7130469.jpeg?auto=compress&cs=tinysrgb&w=600",
-      rightSideImage: "https://cdn-ilajckf.nitrocdn.com/utLabjbGVjpaYDQkazoKnooguTzYeQRR/assets/images/optimized/rev-878bc3b/tamediacdn.techaheadcorp.com/wp-content/uploads/2024/12/04100036/home-banner-img.webp",
+      rightSideImage: "/LandingpgImg/2.png",
       showButtons: true,
       button1Text: "Case Study",
       button1Color: "bg-black text-white",
@@ -68,7 +68,7 @@ export default function Home() {
     },
     {
       backgroundImage: "https://img.freepik.com/free-vector/winter-blue-pink-gradient-background-vector_53876-117275.jpg?semt=ais_hybrid",
-      rightSideImage: "https://cdn-ilajckf.nitrocdn.com/utLabjbGVjpaYDQkazoKnooguTzYeQRR/assets/images/optimized/rev-878bc3b/tamediacdn.techaheadcorp.com/wp-content/uploads/2024/08/29052547/home_slide_5.webp",
+      rightSideImage: "/LandingpgImg/3.png",
       showButtons: true,
       button1Text: "Case Study",
       button1Color: "bg-black text-white",
@@ -83,7 +83,7 @@ export default function Home() {
     },
     {
       backgroundImage: "https://images.pexels.com/photos/7130555/pexels-photo-7130555.jpeg?auto=compress&cs=tinysrgb&w=600",
-      rightSideImage: "https://cdn-ilajckf.nitrocdn.com/utLabjbGVjpaYDQkazoKnooguTzYeQRR/assets/images/optimized/rev-878bc3b/tamediacdn.techaheadcorp.com/wp-content/uploads/2024/08/29052547/home_slide_5.webp",
+      rightSideImage: "/LandingpgImg/4.png",
       showButtons: true,
       button1Text: "Case Study",
       button1Color: "bg-black text-white",
@@ -98,7 +98,7 @@ export default function Home() {
     },
     {
       backgroundImage: "https://images.pexels.com/photos/7134986/pexels-photo-7134986.jpeg?auto=compress&cs=tinysrgb&w=600",
-      rightSideImage: "https://cdn-ilajckf.nitrocdn.com/utLabjbGVjpaYDQkazoKnooguTzYeQRR/assets/images/optimized/rev-878bc3b/tamediacdn.techaheadcorp.com/wp-content/uploads/2024/08/29052547/home_slide_5.webp",
+      rightSideImage: "/LandingpgImg/5.png",
       showButtons: true,
       button1Text: "Case Study",
       button1Color: "bg-black text-white",
@@ -111,21 +111,7 @@ export default function Home() {
       subtext: "Discover our innovative solutions tailored to your needs.",
       smallText: "INNOVATION & TECHNOLOGY",
     },
-    {
-      backgroundImage: "https://t4.ftcdn.net/jpg/04/10/97/01/240_F_410970129_lSm48mOmp1HnrP4vjXvrjs0u30mlZmtA.jpg",
-      rightSideImage: "https://cdn-ilajckf.nitrocdn.com/utLabjbGVjpaYDQkazoKnooguTzYeQRR/assets/images/optimized/rev-878bc3b/tamediacdn.techaheadcorp.com/wp-content/uploads/2024/08/29052547/home_slide_5.webp",
-      showButtons: true,
-      button1Text: "Case Study",
-      button1Color: "bg-black text-white",
-      button1HoverColor: "hover:bg-gray-200 hover:text-black",
-      button2Text: "Contact Us",
-      button2Gradient: "to right, #f2b949, #ff13f0",
-      heading: "Achieve Your Goals5",
-      highlightText: "Efficiently",
-      highlightTextColor: "text-red-500",
-      subtext: "Discover our innovative solutions tailored to your needs.",
-      smallText: "INNOVATION & TECHNOLOGY",
-    },
+   
   ];
 
   return (
