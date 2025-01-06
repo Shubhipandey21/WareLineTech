@@ -2,6 +2,7 @@ import HeroSection from "@/components/HeroSection/HeroSection"
 import ScheduleCall from "@/components/ScheduleCall/ScheduleCall"
 import BenefitsSection from "@/components/Benefit/BenefitSection"
 import DevTeam from "@/components/DevTeam/DevTeam"
+import ComparisonTable from "@/components/ComparisonTable/ComparisonTable"
 export default function HireDevelopers() {
     return (
         <>
@@ -21,6 +22,7 @@ export default function HireDevelopers() {
       />
       <DevTeam />
         <ScheduleCall />
+        <ComparisonTable />
         <BenefitsSection />
     </>
     )
