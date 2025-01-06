@@ -143,7 +143,7 @@ const CaseStudies = () => {
   return (
     <section className="relative">
       <HeroSection
-        bgImage="https://cdn-ilajckf.nitrocdn.com/utLabjbGVjpaYDQkazoKnooguTzYeQRR/assets/images/optimized/rev-b8cf3a0/tamediacdn.techaheadcorp.com/wp-content/uploads/2024/10/15052418/bg@2x.png"
+        bgImage="/Case-study/CaseStudyBg.jpg"
         buttonColor="bg-black"
         buttonText="Get Started"
         headingHighlight="We craft tomorrow’s"
@@ -151,9 +151,9 @@ const CaseStudies = () => {
         headingLastPart="Tailored for You"
         subtext="The Success Stories of TechAhead, that brought light to many Startups and Global Brands."
         floatingImages={[
-          "https://cdn-ilajckf.nitrocdn.com/utLabjbGVjpaYDQkazoKnooguTzYeQRR/assets/images/optimized/rev-b8cf3a0/tamediacdn.techaheadcorp.com/wp-content/uploads/2024/07/29054608/Group-16898@2x.png",
-          "https://cdn-ilajckf.nitrocdn.com/utLabjbGVjpaYDQkazoKnooguTzYeQRR/assets/images/optimized/rev-b8cf3a0/tamediacdn.techaheadcorp.com/wp-content/uploads/2024/07/29054607/Group-16897@2x.png",
-          "https://cdn-ilajckf.nitrocdn.com/utLabjbGVjpaYDQkazoKnooguTzYeQRR/assets/images/optimized/rev-b8cf3a0/tamediacdn.techaheadcorp.com/wp-content/uploads/2024/07/29054605/Group-16896@2x.png",
+          "/Case-study/6.png",
+          "/Case-study/7.png",
+          "/Case-study/8.png",
         ]}
       />
 
