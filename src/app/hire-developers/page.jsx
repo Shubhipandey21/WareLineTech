@@ -1,3 +1,4 @@
+"use-client";
 import HeroSection from "@/components/HeroSection/HeroSection"
 import ScheduleCall from "@/components/ScheduleCall/ScheduleCall"
 import BenefitsSection from "@/components/Benefit/BenefitSection"
