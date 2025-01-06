@@ -8,77 +8,66 @@ const DevTeam = () => {
       description:
         "Oversee and guide the entire development process to guarantee project success.",
       badge: "End-to-End Project Leadership",
-      image: "/project-manager.jpg", // Replace with your image path
     },
     {
       title: "QA Engineers",
       description:
         "Guarantee flawless application performance with zero errors.",
       badge: "Seamless Application Functionality",
-      image: "/qa-engineer.jpg", // Replace with your image path
     },
     {
       title: "Business Analysts",
       description:
         "Uncover key data insights to enhance business and development strategies.",
       badge: "Data-Driven Decision Making",
-      image: "/business-analyst.jpg", // Replace with your image path
     },
     {
       title: "Frontend Developers",
       description:
         "Craft visually appealing and user-friendly interfaces to ensure an exceptional user experience.",
       badge: "Pixel-Perfect UI Design",
-      image: "/frontend-developer.jpg", // Replace with your image path
     },
     {
       title: "Backend Developers",
       description:
         "Build robust and scalable server-side logic to support seamless application functionality.",
       badge: "Powerful Backend Architecture",
-      image: "/backend-developer.jpg", // Replace with your image path
     },
     {
       title: "UI/UX Designers",
       description:
         "Design intuitive and visually engaging interfaces to maximize user satisfaction.",
       badge: "User-Centered Design Expertise",
-      image: "/ui-ux-designer.jpg", // Replace with your image path
     },
     {
       title: "DevOps Engineers",
       description:
         "Implement CI/CD pipelines and manage cloud infrastructure for efficient deployment and operations.",
       badge: "Efficient Deployment & Operations",
-      image: "/devops-engineer.jpg", // Replace with your image path
     },
     {
       title: "Database Administrators",
       description:
         "Ensure efficient data storage, retrieval, and security for seamless application performance.",
       badge: "Optimized Database Management",
-      image: "/database-administrator.jpg", // Replace with your image path
     },
     {
       title: "Security Engineers",
       description:
         "Safeguard the application and data from vulnerabilities and cyber threats.",
       badge: "Fortified Security Measures",
-      image: "/security-engineer.jpg", // Replace with your image path
     },
     {
       title: "Content Writers",
       description:
         "Create compelling and informative content to support user engagement and documentation.",
       badge: "Clear & Engaging Communication",
-      image: "/content-writer.jpg", // Replace with your image path
     },
     {
       title: "System Architects",
       description:
         "Design the overall system architecture to ensure scalability, performance, and maintainability.",
       badge: "Scalable System Design",
-      image: "/system-architect.jpg", // Replace with your image path
     },
   ];
 
@@ -119,8 +108,8 @@ const DevTeam = () => {
         Build Your Ideal Dev Team
       </h2>
       <h3 className="text-2xl md:text-2xl text-center font-semibold mb-12 text-black">
-      What a typical software development team consists of
-          </h3>
+        What a typical software development team consists of
+      </h3>
       <div className="overflow-hidden">
         <div
           className="flex transition-transform duration-700 ease-in-out"
@@ -135,13 +124,6 @@ const DevTeam = () => {
                 pastelColors[index % pastelColors.length]
               }`}
             >
-              <div className="mb-6">
-                <img
-                  src={member.image}
-                  alt={member.title}
-                  className="w-32 h-32 mx-auto rounded-full object-cover"
-                />
-              </div>
               <h3 className="text-xl font-bold mb-3">{member.title}</h3>
               <p className="text-sm text-gray-700 mb-5">{member.description}</p>
               <div className="inline-block bg-white text-gray-700 px-6 py-2 rounded-full text-sm font-medium shadow">
