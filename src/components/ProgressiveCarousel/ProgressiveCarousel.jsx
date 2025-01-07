@@ -10,31 +10,38 @@ const ProgressiveCarousel = ({
   subheading,
   duration = 5000,
 }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [progress, setProgress] = useState(0);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0); // Tracks the current slide
+  const [progress, setProgress] = useState(0); // Tracks the progress bar
+  const [isAnimating, setIsAnimating] = useState(true); // Ensures smooth transitions
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          setDropdownOpen(false);
-          setTimeout(() => setDropdownOpen(true), 300); // Smooth transition
+    // Function to handle slide transition
+    const transitionSlide = () => {
+      setProgress(0); // Reset progress bar
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length); // Move to the next slide or loop back
+    };
 
-          setCurrentIndex((prevIndex) => {
-            const nextIndex = (prevIndex + 1) % data.length; // Ensure forward sequence
-            return nextIndex;
-          });
-          return 0; // Reset progress
-        }
-        return prev + 1; // Increment progress
-      });
-    }, duration / 100);
+    if (isAnimating) {
+      const progressInterval = setInterval(() => {
+        setProgress((prev) => {
+          if (prev >= 100) {
+            transitionSlide(); // Move to the next slide when progress reaches 100%
+            return 0; // Reset progress
+          }
+          return prev + 1; // Increment progress
+        });
+      }, duration / 100);
 
-    setDropdownOpen(true); // Open the first dropdown initially
+      return () => clearInterval(progressInterval); // Cleanup interval on unmount
+    }
+  }, [data.length, duration, isAnimating]);
 
-    return () => clearInterval(interval); // Cleanup interval on unmount
-  }, [data.length, duration]);
+  const handleManualSelection = (index) => {
+    setIsAnimating(false); // Pause automatic transitions
+    setCurrentIndex(index); // Move to selected slide
+    setProgress(0); // Reset progress bar
+    setTimeout(() => setIsAnimating(true), 500); // Resume animation after a short delay
+  };
 
   const { title, description, image } = data[currentIndex];
 
@@ -60,16 +67,14 @@ const ProgressiveCarousel = ({
             {data.map((item, index) => (
               <div key={index} className="border-b pb-4">
                 <button
-                  onClick={() => {
-                    setCurrentIndex(index);
-                    setDropdownOpen(true);
-                    setProgress(0);
-                  }}
-                  className="text-left w-full text-lg font-medium focus:outline-none hover:text-blue-600"
+                  onClick={() => handleManualSelection(index)} // Handle manual selection
+                  className={`text-left w-full text-lg font-medium focus:outline-none hover:text-blue-600 ${
+                    index === currentIndex ? "text-blue-600" : ""
+                  }`}
                 >
                   {item.title}
                 </button>
-                {dropdownOpen && currentIndex === index && (
+                {currentIndex === index && (
                   <div className="mt-4 text-gray-600">
                     <p>{item.description}</p>
                     {/* Progress Bar */}

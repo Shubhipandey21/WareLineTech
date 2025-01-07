@@ -46,11 +46,13 @@ const TestimonialSlider = () => {
     };
 
     return (
-        <div className="w-screen mx-auto px-0">
-            <div className="bg-gray-900 p-8 rounded-none">
+        <div className="w-full mx-auto px-4 sm:px-0">
+            <div className="bg-gray-900 p-6 sm:p-8 rounded-none overflow-hidden">
                 <div className="text-white mb-4">
-                    <h1 className="text-2xl font-bold mb-8 ml-10 text-left">REAL USERS, REAL TRANSFORMATION</h1>
-                    <p className="text-4xl mb-6 text-left ml-10">
+                    <h1 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-8 ml-4 sm:ml-10 text-left">
+                        REAL USERS, REAL TRANSFORMATION
+                    </h1>
+                    <p className="text-lg sm:text-4xl mb-4 sm:mb-6 text-left ml-4 sm:ml-10">
                         Discover how Wareline Tech has{' '}
                         <span className="text-purple-400">transformed businesses</span> with
                         exceptional user experience design, innovative app development,
@@ -61,29 +63,33 @@ const TestimonialSlider = () => {
                 <div className="relative overflow-hidden">
                     <div
                         className="flex transition-transform duration-500 ease-in-out"
-                        style={{ transform: `translateX(-${currentSlide * 100}vw)` }}
+                        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
                     >
                         {testimonials.map((testimonial, index) => (
                             <div
                                 key={index}
-                                className="w-screen flex-shrink-0 px-8"
+                                className="w-full flex-shrink-0 px-4"
                             >
-                                <div className="bg-blue-900/30 p-6 rounded-lg mx-auto max-w-5xl flex items-center h-[400px]">
+                                <div className="bg-blue-900/30 p-4 sm:p-6 rounded-lg mx-auto max-w-md sm:max-w-5xl flex flex-col sm:flex-row items-center h-auto sm:h-[400px]">
                                     {/* Review Section */}
-                                    <div className="flex-1">
-                                        <h3 className="text-white text-3xl font-bold mb-2">{testimonial.company}</h3>
-                                        <div className="text-white  mb-4">
-                                            <p className="font-bold text-2xl">{testimonial.name}</p>
-                                            <p className="text-gray-400 text-xl mb-2">{testimonial.title}</p>
+                                    <div className="flex-1 mb-4 sm:mb-0">
+                                        <h3 className="text-white text-2xl sm:text-3xl font-bold mb-2">
+                                            {testimonial.company}
+                                        </h3>
+                                        <div className="text-white mb-4">
+                                            <p className="font-bold text-lg sm:text-2xl">{testimonial.name}</p>
+                                            <p className="text-gray-400 text-sm sm:text-xl mb-2">
+                                                {testimonial.title}
+                                            </p>
                                             <p className="text-white">"{testimonial.quote}"</p>
                                         </div>
                                     </div>
                                     {/* Image Section */}
-                                    <div className="flex-shrink-0 ml-4">
+                                    <div className="flex-shrink-0 sm:ml-4">
                                         <img
                                             src={testimonial.image}
                                             alt={testimonial.company}
-                                            className="w-96 h-96 rounded-lg object-cover"
+                                            className="w-48 h-48 sm:w-96 sm:h-96 rounded-lg object-cover"
                                         />
                                     </div>
                                 </div>
@@ -93,13 +99,13 @@ const TestimonialSlider = () => {
 
                     <button
                         onClick={prevSlide}
-                        className="absolute left-4 top-1/2 -translate-y-1/2 bg-orange-500 rounded-full p-2 text-white"
+                        className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-orange-500 rounded-full p-1 sm:p-2 text-white"
                     >
                         <ChevronLeft size={24} />
                     </button>
                     <button
                         onClick={nextSlide}
-                        className="absolute right-4 top-1/2 -translate-y-1/2 bg-orange-500 rounded-full p-2 text-white"
+                        className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-orange-500 rounded-full p-1 sm:p-2 text-white"
                     >
                         <ChevronRight size={24} />
                     </button>

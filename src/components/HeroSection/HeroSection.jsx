@@ -11,7 +11,7 @@ const HeroSection = ({
   floatingImages = [],
 }) => {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[120vh] flex items-center justify-center overflow-hidden">
       {/* Background with gradient overlay */}
       <div className="absolute inset-0">
         <img
@@ -65,7 +65,7 @@ const HeroSection = ({
           const positions = [
             { top: "70%", left: "15%" }, // First image
             { top: "70%", left: "70%" }, // Second image
-            { top: "85%", left: "45%" }, // Third image
+            { top: "78%", left: "45%" }, // Third image
           ];
 
           const { top, left } = positions[index % positions.length];

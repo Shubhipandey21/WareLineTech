@@ -31,6 +31,11 @@ const Navbar = () => {
       { name: "E-Commerce", route: "/industries/e-commerce" },
       { name: "Real Estate", route: "/industries/real-estate" },
       { name: "InsureTech", route: "/industries/insuretech" },
+      { name: "Travel", route: "/industries/travel" },
+      { name: "Hospitality", route: "/industries/hospitality" },
+      { name: "Construction", route: "/industries/construction" },
+      { name: "Sports", route: "/industries/sports" },
+      { name: "Education", route: "/industries/education" },
     ],
     company: [
       { name: "About Us", route: "/company/about-us" },
