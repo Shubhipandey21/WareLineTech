@@ -1,5 +1,5 @@
 "use client";
-// components/ProgressiveCarousel.js
+
 import { useState, useEffect } from "react";
 
 const ProgressiveCarousel = ({

@@ -3,9 +3,9 @@ import ScheduleCall from "@/components/ScheduleCall/ScheduleCall"
 import BenefitsSection from "@/components/Benefit/BenefitSection"
 import DevTeam from "@/components/DevTeam/DevTeam"
 export default function HireDevelopers() {
-    return (
-        <>
-     <HeroSection
+  return (
+    <>
+      <HeroSection
         bgImage="https://cdn-ilajckf.nitrocdn.com/utLabjbGVjpaYDQkazoKnooguTzYeQRR/assets/images/optimized/rev-b8cf3a0/tamediacdn.techaheadcorp.com/wp-content/uploads/2024/10/15052418/bg@2x.png"
         buttonColor="bg-black"
         buttonText="Get Started"
@@ -20,9 +20,9 @@ export default function HireDevelopers() {
         ]}
       />
       <DevTeam />
-        <ScheduleCall />
-        <BenefitsSection />
+      <ScheduleCall />
+      <BenefitsSection />
     </>
-    )
+  )
 
 }

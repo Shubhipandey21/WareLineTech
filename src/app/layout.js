@@ -1,7 +1,14 @@
 import "./globals.css";
+import {Poppins} from "next/font/google"
 import Head from 'next/head';
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
+
+const poppins = Poppins({
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"]
+});
 
 export const metadata = {
   title: "WareLine Tech",
