@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 import dynamic from "next/dynamic";
-import HeroSection from "@/components/HeroSection/HeroSection";
 import ScheduleCall from "@/components/ScheduleCall/ScheduleCall";
 import BenefitsSection from "@/components/Benefit/BenefitSection";
 import DevTeam from "@/components/DevTeam/DevTeam";

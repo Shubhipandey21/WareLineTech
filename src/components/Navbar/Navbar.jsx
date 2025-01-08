@@ -31,6 +31,11 @@ const Navbar = () => {
       { name: "E-Commerce", route: "/industries/e-commerce" },
       { name: "Real Estate", route: "/industries/real-estate" },
       { name: "InsureTech", route: "/industries/insuretech" },
+      { name: "Travel", route: "/industries/travel" },
+      { name: "Hospitality", route: "/industries/hospitality" },
+      { name: "Construction", route: "/industries/construction" },
+      { name: "Sports", route: "/industries/sports" },
+      { name: "Education", route: "/industries/education" },
     ],
     company: [
       { name: "About Us", route: "/company/about-us" },
@@ -39,7 +44,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white shadow-md">
+    <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4 flex justify-between items-center h-16">
         {/* Logo */}
         <div className="text-xl font-bold text-black">

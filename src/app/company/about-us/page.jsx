@@ -190,7 +190,6 @@ const AboutUs = () => {
             // className="custom-section-class"
             />
 
-
             <Carousel
                 title="Industries We Serve"
                 subtitle="Digital transformation-fuelled growth
