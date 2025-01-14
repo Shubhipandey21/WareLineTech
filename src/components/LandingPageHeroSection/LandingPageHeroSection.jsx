@@ -42,7 +42,7 @@ const LandingPageHeroSection = ({ slides = [] }) => {
       }}
     >
       {/* Left Content Section */}
-      <div className="lg:flex-[0.8] flex flex-col items-center lg:items-start justify-center p-6 lg:p-16 text-center lg:text-left">
+      <div className="lg:flex-[0.6] flex flex-col items-center lg:items-start justify-center p-4 lg:p-12 text-center lg:text-left">
         <div className="max-w-2xl space-y-6">
           {smallText && (
             <div className="inline-block px-4 py-2 text-xs sm:text-sm font-semibold text-gray-700 bg-gray-100 rounded-md">
@@ -81,13 +81,13 @@ const LandingPageHeroSection = ({ slides = [] }) => {
       </div>
 
       {/* Right Image Section */}
-      <div className="lg:flex-[0.8] flex items-center justify-center p-6 lg:p-16">
+      <div className="lg:flex-[0.6] flex items-center justify-center p-4 lg:p-12">
         {rightSideImage && (
           <div className="max-w-lg w-full">
             <img
               src={rightSideImage}
               alt="Hero Right Side"
-              className="w-full h-auto object-cover rounded-3xl "
+              className="w-full h-auto object-cover rounded-3xl"
             />
           </div>
         )}

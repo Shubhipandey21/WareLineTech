@@ -140,31 +140,31 @@ import {
         title: "Mobile App Development",
         description:
           "Build cutting-edge mobile applications that offer high performance, advanced features, and smooth user interactions.",
-        image: "/ServicesImages/iosSolImg/mobileAppDevelopment.jpg",
+        image: "/ServicesImages/iOSImg/MobileAppdev.jpg",
       },
       {
         title: "Cloud Integration for iOS Apps",
         description:
           "Leverage cloud technology to scale your iOS app and manage data storage, ensuring high availability and performance.",
-        image: "/ServicesImages/iosSolImg/cloudIntegration.jpg",
+        image: "/ServicesImages/iOSImg/CloudMobilrApp.jpg",
       },
       {
         title: "Augmented Reality (AR) App Development",
         description:
           "Design and develop immersive AR experiences for iOS that engage users with interactive and cutting-edge technology.",
-        image: "/ServicesImages/iosSolImg/ARAppDevelopment.jpg",
+        image: "/ServicesImages/iOSImg/ARMobile.jpg",
       },
       {
         title: "App Performance Optimization",
         description:
           "Enhance the performance of your iOS app, ensuring fast loading times, smooth animations, and high responsiveness.",
-        image: "/ServicesImages/iosSolImg/appOptimization.jpg",
+        image: "/ServicesImages/iOSImg/AppPerformance.jpg",
       },
       {
         title: "Mobile App Security",
         description:
           "Implement advanced security measures to protect your iOS apps from data breaches and ensure compliance with industry standards.",
-        image: "/ServicesImages/iosSolImg/appSecurity.jpg",
+        image: "/ServicesImages/iOSImg/MobileSecurity.jpg",
       },
     ];
   
