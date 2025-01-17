@@ -139,31 +139,31 @@ export default function FlutterServices() {
             title: "Mobile App Development",
             description:
                 "Build cutting-edge mobile applications with Flutter that offer high performance, advanced features, and smooth user interactions.",
-            image: "/ServicesImages/Flutter/MobileApp.jpg",
+            image: "https://i.pinimg.com/736x/27/5d/2f/275d2f2edeab40d1b332c78c4b818819.jpg",
         },
         {
             title: "Cloud Integration for Flutter Apps",
             description:
                 "Leverage cloud technology to scale your Flutter app and manage data storage, ensuring high availability and performance.",
-            image: "/ServicesImages/Flutter/CloudApp.jpg",
+            image: "https://i.pinimg.com/736x/c3/2b/de/c32bde4da88b61811975e67fbaa2bc31.jpg",
         },
         {
             title: "Augmented Reality (AR) App Development",
             description:
                 "Design and develop immersive AR experiences for Flutter that engage users with interactive and cutting-edge technology.",
-            image: "/ServicesImages/Flutter/ARApp.jpg",
+            image: "https://i.pinimg.com/736x/c5/eb/0c/c5eb0cdf46379779dad728323c6ef9af.jpg",
         },
         {
             title: "App Performance Optimization",
             description:
                 "Enhance the performance of your Flutter app, ensuring fast loading times, smooth animations, and high responsiveness.",
-            image: "/ServicesImages/Flutter/AppPerformanceOptimization.jpg",
+            image: "https://i.pinimg.com/736x/83/09/92/830992596142f8bbfcaafa20ab9fe36a.jpg",
         },
         {
             title: "Mobile App Security",
             description:
                 "Implement advanced security measures to protect your Flutter apps from data breaches and ensure compliance with industry standards.",
-            image: "/ServicesImages/Flutter/AppSecurity.jpg",
+            image: "https://i.pinimg.com/736x/d9/90/59/d9905958e523450c2768414fc651e43a.jpg",
         },
     ];
 
@@ -198,16 +198,16 @@ export default function FlutterServices() {
     return (
         <>
             <HeroSection2
-                backgroundImage="/ServicesImages/Flutter/FlutterBG.jpeg"
+                backgroundImage="https://images.pexels.com/photos/7135057/pexels-photo-7135057.jpeg?auto=compress&cs=tinysrgb&w=600"
                 buttonGradient="bg-gradient-to-r from-blue-500 to-purple-600"
                 title="Transform Your Business with Custom Flutter Apps"
                 description="Deliver seamless and innovative Flutter app solutions to enhance user experience and meet your business goals."
-                imageSrc="/ServicesImages/Flutter/FlutterHero.jpg"
+                imageSrc="https://images.pexels.com/photos/4467737/pexels-photo-4467737.jpeg?auto=compress&cs=tinysrgb&w=600"
             />
             <AboutSection
                 heading="Empowering Your Business with Flutter Apps"
                 description="Unlock the potential of Flutter by leveraging our expertise in app development, design, and support to drive your business forward."
-                imageSrc="/ServicesImages/Flutter/FlutterAbout.jpg"
+                imageSrc="/ServicesImages/flutter/FlutterAbout.jpg"
             />
             <Carousel
                 title="Custom Flutter Solutions for Every Need"

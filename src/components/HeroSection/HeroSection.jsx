@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 const HeroSection = ({
   bgImage,
   buttonColor,
@@ -44,13 +46,15 @@ const HeroSection = ({
           )}
 
           {/* CTA Button */}
-          <button
+         <Link href="/services">
+         <button
             className={`${buttonColor} text-white px-8 py-3 rounded-full font-medium 
             transform transition-transform duration-300 hover:scale-105 
             shadow-lg hover:shadow-xl`}
           >
             {buttonText}
           </button>
+          </Link>
         </div>
       </div>
 
