@@ -134,15 +134,15 @@ export default function ReactNativeServices() {
   return (
     <>
       <HeroSection2
-        backgroundImage="/IndustriesImg/ReactNativeBG.jpeg"
+        backgroundImage="https://images.pexels.com/photos/7134994/pexels-photo-7134994.jpeg?auto=compress&cs=tinysrgb&w=600"
         buttonGradient="bg-gradient-to-r from-green-400 to-blue-500"
         title="React Native App Development Company"
-        description="Partner with WarelineTech to deliver feature-rich, scalable, and cross-platform React Native applications tailored to your business needs."
-        imageSrc="/IndustriesImg/ReactNativeHero.jpeg"
+        descriptions="Partner with WarelineTech to deliver feature-rich, scalable, and cross-platform React Native applications tailored to your business needs."
+        imageSrc="/ServicesImages/reactnative/reactnativeHero.jpeg"
       />
 
       <AboutSection
-        imageSrc="/IndustriesImg/ReactNativeAbout.jpeg"
+        imageSrc="/ServicesImages/reactnative/reactnativeAbout.jpeg"
         content={content}
       />
       <Carousel
