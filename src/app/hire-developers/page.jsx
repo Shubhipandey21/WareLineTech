@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import ScheduleCall from "@/components/ScheduleCall/ScheduleCall";
 import BenefitsSection from "@/components/Benefit/BenefitSection";
@@ -9,9 +9,12 @@ import ComparisonTable from "@/components/ComparisonTable/ComparisonTable";
 import ContactUsSection from "@/components/ContactUs/ContactUsSection";
 
 // Dynamically load the HeroSection component without SSR
-const HireHeroSection = dynamic(() => import('@/components/HeroSection/HeroSection'), {
-  ssr: false, // Disable server-side rendering for this component
-});
+const HireHeroSection = dynamic(
+  () => import("@/components/HeroSection/HeroSection"),
+  {
+    ssr: false, // Disable server-side rendering for this component
+  }
+);
 
 export default function HireDevelopers() {
   const [isClient, setIsClient] = useState(false);
@@ -29,17 +32,17 @@ export default function HireDevelopers() {
   return (
     <>
       <HireHeroSection
-        bgImage="https://cdn-ilajckf.nitrocdn.com/utLabjbGVjpaYDQkazoKnooguTzYeQRR/assets/images/optimized/rev-b8cf3a0/tamediacdn.techaheadcorp.com/wp-content/uploads/2024/10/15052418/bg@2x.png"
+        bgImage="/HireDeveloperImg/hireDevBG.jpeg" // Replace with your background image
         buttonColor="bg-black"
-        buttonText="Get Started"
-        headingHighlight="We craft tomorrow’s"
-        headingFirstPart=" digital experiences products, and ventures"
-        headingLastPart="Tailored for You"
-        subtext="The Success Stories of WarelineTech, that brought light to many Startups and Global Brands."
+        buttonText="Start Your Project"
+        headingHighlight="Innovating with"
+        headingFirstPart=" cutting-edge technology solutions"
+        headingLastPart=" to empower your business"
+        subtext="Join hands with our expert developers to shape the future of your business with scalable and high-performance software solutions."
         floatingImages={[
-          "https://cdn-ilajckf.nitrocdn.com/utLabjbGVjpaYDQkazoKnooguTzYeQRR/assets/images/optimized/rev-b8cf3a0/tamediacdn.techaheadcorp.com/wp-content/uploads/2024/07/29054608/Group-16898@2x.png",
-          "https://cdn-ilajckf.nitrocdn.com/utLabjbGVjpaYDQkazoKnooguTzYeQRR/assets/images/optimized/rev-b8cf3a0/tamediacdn.techaheadcorp.com/wp-content/uploads/2024/07/29054607/Group-16897@2x.png",
-          "https://cdn-ilajckf.nitrocdn.com/utLabjbGVjpaYDQkazoKnooguTzYeQRR/assets/images/optimized/rev-b8cf3a0/tamediacdn.techaheadcorp.com/wp-content/uploads/2024/07/29054605/Group-16896@2x.png",
+          "/HireDeveloperImg/9.png", // Replace with your first image
+          "/HireDeveloperImg/10.png", // Replace with your second image
+          "/HireDeveloperImg/11.png", // Replace with your third image
         ]}
       />
       <DevTeam />

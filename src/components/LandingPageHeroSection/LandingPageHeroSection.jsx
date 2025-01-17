@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link'; // Import Link from next/link
 
 const LandingPageHeroSection = ({ slides = [] }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -61,7 +62,6 @@ const LandingPageHeroSection = ({ slides = [] }) => {
           {showButtons && (
             <div className="flex flex-row gap-4 justify-center lg:justify-start">
               <button
-                
                 className={`px-6 py-3 text-sm sm:text-base rounded-full font-medium transform transition-transform duration-300 hover:scale-105 shadow-md ${button1Color} ${button1HoverColor}`}
               >
                 {button1Text}

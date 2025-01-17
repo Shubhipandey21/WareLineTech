@@ -1,86 +1,189 @@
 "use client";
+
+import Link from "next/link";
+
 const Footer = () => {
-    return (
-      <footer className="bg-black text-white py-10">
-        <div className="container mx-auto px-6 lg:px-20">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {/* Contact Section */}
-            <div>
-              <h4 className="font-bold text-lg mb-4">USA</h4>
-              <p className="text-sm">
-                28720 Roadside Dr, STE 254,<br />
-                Agoura Hills, CA 91301<br />
-                +1 (818) 318-0727
-              </p>
-              <h4 className="font-bold text-lg mt-6 mb-4">India</h4>
-              <p className="text-sm">
-                Floor 7A, Tower C, Noida One,<br />
-                Sector 62, Noida, Delhi-NCR 201309<br />
-                +91 120 6039900
-              </p>
-            </div>
-  
-            {/* Services Section */}
-            <div>
-              <h4 className="font-bold text-lg mb-4">Services</h4>
-              <ul className="space-y-2 text-sm">
-                <li>Mobile App Development</li>
-                <li>Web App Development</li>
-                <li>Internet Of Things (IoT)</li>
-                <li>Artificial Intelligence</li>
-                <li>Cloud Engineering</li>
-                <li>Enterprise App Development</li>
-                <li>Legacy Modernization</li>
-                <li>Application Maintenance</li>
-                <li>iOS App Development</li>
-                <li>Android App Development</li>
-                <li>Flutter App Development</li>
-                <li>React Native App Development</li>
-              </ul>
-            </div>
-  
-            {/* Industries Section */}
-            <div>
-              <h4 className="font-bold text-lg mb-4">Industries</h4>
-              <ul className="space-y-2 text-sm">
-                <li>Healthcare</li>
-                <li>Social Media</li>
-                <li>Finance</li>
-                <li>Insurance</li>
-                <li>Real Estate</li>
-                <li>Education</li>
-                <li>Sports</li>
-              </ul>
-            </div>
-  
-            {/* Resources Section */}
-            <div>
-              <h4 className="font-bold text-lg mb-4">Resources</h4>
-              <ul className="space-y-2 text-sm">
-                <li>Careers</li>
-                <li>Knowledge Center</li>
-                <li>Technologies</li>
-                <li>Staff Augmentation</li>
-                <li>Hire Developers</li>
-                <li>Featured Companies</li>
-                <li>Client Reviews</li>
-                <li>Press Release</li>
-                <li>Fraud Alert</li>
-              </ul>
-            </div>
-          </div>
-  
-          {/* Bottom Section */}
-          <div className="mt-10 border-t border-gray-700 pt-6 flex flex-col lg:flex-row items-center justify-between">
+  return (
+    <footer className="bg-black text-white py-10">
+      <div className="container mx-auto px-8 lg:px-20">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Contact Section */}
+          <div>
+          <img
+              src="/WarelineLogo.png"
+              alt="WareLineTech Logo"
+              className="w-60 h-24"
+              
+            />
+            <h4 className="font-bold text-lg mb-4">India-Mohali</h4>
             <p className="text-sm">
-              Driving Digital Innovation with Data-Driven and AI-Integrated Mobile and Web App Development Services.
+            Wareline Technologies, 4th Floor, <br />
+              Plot No. - D-176, Phase 8 B, Industrial Area,<br />
+              Sector 74, Mohali, Punjab, 140501
             </p>
            
           </div>
+
+          {/* Services Section */}
+          <div>
+            <h4 className="font-bold text-lg mb-4">Services</h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/services/mobile-apps" className="hover:text-blue-600">
+                  Mobile App Development
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/web-apps" className="hover:text-blue-600">
+                  Web App Development
+                </Link>
+              </li>
+             
+              <li>
+                <Link href="/services/ai-ml" className="hover:text-blue-600">
+                  Artificial Intelligence
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/cloud" className="hover:text-blue-600">
+                  Cloud Engineering
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/enterprise-app" className="hover:text-blue-600">
+                  Enterprise App Development
+                </Link>
+              </li>
+             
+              <li>
+                <Link href="/services/ios" className="hover:text-blue-600">
+                  iOS App Development
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/android" className="hover:text-blue-600">
+                  Android App Development
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/flutter" className="hover:text-blue-600">
+                  Flutter App Development
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/react-native" className="hover:text-blue-600">
+                  React Native App Development
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Industries Section */}
+          <div>
+            <h4 className="font-bold text-lg mb-4">Industries</h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/industries/healthcare" className="hover:text-blue-600">
+                  Healthcare
+                </Link>
+              </li>
+              <li>
+                <Link href="/industries/fintech" className="hover:text-blue-600">
+                  Fintech
+                </Link>
+              </li>
+              <li>
+                <Link href="/industries/ecommerce" className="hover:text-blue-600">
+                  E-Commerce
+                </Link>
+              </li>
+              <li>
+                <Link href="/industries/insuretech" className="hover:text-blue-600">
+                  Insure Tech
+                </Link>
+              </li>
+              <li>
+                <Link href="/industries/real-estate" className="hover:text-blue-600">
+                  Real Estate
+                </Link>
+              </li>
+              <li>
+                <Link href="/industries/education" className="hover:text-blue-600">
+                  Education
+                </Link>
+              </li>
+              <li>
+                <Link href="/industries/sports" className="hover:text-blue-600">
+                  Sports
+                </Link>
+              </li>
+              <li>
+                <Link href="/industries/travel" className="hover:text-blue-600">
+                  Travel
+                </Link>
+              </li>
+              <li>
+                <Link href="/industries/Hospitality" className="hover:text-blue-600">
+                 Hospitality
+                </Link>
+              </li>
+              <li>
+                <Link href="/industries/construction" className="hover:text-blue-600">
+                  Construction
+                </Link>
+              </li>
+              <li>
+                <Link href="/industries/education" className="hover:text-blue-600">
+                  Education
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Resources Section */}
+          <div>
+            <h4 className="font-bold text-lg mb-4">Resources</h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/company/careers" className="hover:text-blue-600">
+                  Careers
+                </Link>
+              </li>
+              <li>
+                <Link href="/company/about-us" className="hover:text-blue-600">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact-us" className="hover:text-blue-600">
+                  Contact Us
+                </Link>
+              </li>
+             
+              <li>
+                <Link href="/hire-developers" className="hover:text-blue-600">
+                  Hire Developers
+                </Link>
+              </li>
+             
+              <li>
+                <Link href="/press" className="hover:text-blue-600">
+                  Press Release
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
-      </footer>
-    );
-  };
-  
-  export default Footer;
-  
+
+        {/* Bottom Section */}
+        <div className="mt-10 border-t border-gray-700 pt-6 flex flex-col lg:flex-row items-center justify-between">
+          <p className="text-sm">
+            Driving Digital Innovation with Data-Driven and AI-Integrated Mobile and Web App Development Services.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

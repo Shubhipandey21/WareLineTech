@@ -19,7 +19,10 @@ const Navbar = () => {
       { name: "Web Apps", route: "/services/web-apps" },
       { name: "Cloud", route: "/services/cloud" },
       { name: "AI/ML", route: "/services/ai-ml" },
-      { name: "Enterprise Level Solutions", route: "/services/enterprise-solutions" },
+      {
+        name: "Enterprise Level Solutions",
+        route: "/services/enterprise-solutions",
+      },
       { name: "iOS", route: "/services/iOS" },
       { name: "Android", route: "/services/android" },
       { name: "Flutter", route: "/services/flutter" },
@@ -48,7 +51,13 @@ const Navbar = () => {
       <div className="container mx-auto px-4 flex justify-between items-center h-16">
         {/* Logo */}
         <div className="text-xl font-bold text-black">
-          <Link href="/">WareLineTech</Link>
+          <Link href="/">
+            <img
+              src="/warelinetechlogo.svg"
+              alt="WareLineTech Logo"
+              className="w-40 h-40"
+            />
+          </Link>
         </div>
 
         {/* Desktop Navigation */}
@@ -63,7 +72,10 @@ const Navbar = () => {
             { name: "Contact Us", route: "/contact-us" },
           ].map((item) => (
             <li key={item.name} className="group relative">
-              <Link href={item.route} className="text-black font-bold hover:text-gray-600">
+              <Link
+                href={item.route}
+                className="text-black font-bold hover:text-gray-600"
+              >
                 {item.name}
               </Link>
               {dropdownItems[item.name.toLowerCase()] && (
@@ -126,14 +138,19 @@ const Navbar = () => {
                         : setMenuOpen(false)
                     }
                   >
-                    <Link href={item.route} className="text-black hover:text-blue-600">
+                    <Link
+                      href={item.route}
+                      className="text-black hover:text-blue-600"
+                    >
                       {item.name}
                     </Link>
                     {dropdownItems[item.name.toLowerCase()] && (
                       <ChevronDown
                         size={20}
                         className={`transform transition-transform ${
-                          dropdown === item.name.toLowerCase() ? "rotate-180" : ""
+                          dropdown === item.name.toLowerCase()
+                            ? "rotate-180"
+                            : ""
                         }`}
                       />
                     )}

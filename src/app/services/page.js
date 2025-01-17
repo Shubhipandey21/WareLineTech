@@ -198,10 +198,10 @@ export default function Services() {
 
             <FeaturedWork />
 
-            <FAQSection data={faqData} />
+           
 
             <TechStack {...techStackProps} />
-
+            <FAQSection data={faqData} />
             <ContactUsSection
                 title="Contact Us"
                 subtitle="We'd love to hear from you!"
