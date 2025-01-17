@@ -29,36 +29,45 @@ const CareerForm = () => {
         }
     };
     console.log("Form State Before Submission:", formData);
+
     const handleResumeUpload = async () => {
-        const uploadData = new FormData(); // Use a different name here
+        const uploadData = new FormData(); 
         uploadData.append("file", formData.resume); // Append the resume file
         uploadData.append("upload_preset", "warelineTech"); // Replace with your Cloudinary preset
         uploadData.append("cloud_name", "dwm3rq1ve"); // Replace with your Cloudinary cloud name
-        console.log("File to Upload:", formData.resume);
-        console.log("Uploading to Cloudinary...");
+    
         try {
             const response = await axios.post(
-                "https://api.cloudinary.com/v1_1/dwm3rq1ve/image/upload",
+                "https://api.cloudinary.com/v1_1/dwm3rq1ve/auto/upload", // Use 'auto' for all resource types
                 uploadData
             );
             console.log("Cloudinary Response:", response.data);
-            return response.data.secure_url; // Return the uploaded file URL
+    
+            // Extract the public_id from the response
+            const publicId = response.data.public_id;
+            return publicId; // Return the public ID
         } catch (error) {
             console.error("Error uploading file", error);
             return null;
         }
-        
     };
     
 
+    const constructPublicUrl = (publicId) => {
+        return `https://res.cloudinary.com/dwm3rq1ve/image/upload/f_auto,q_auto/${publicId}`;
+    };
+    
     const onSubmit = async (data) => {
         try {
             // Upload resume first
-            const resumeUrl = await handleResumeUpload();
-            if (!resumeUrl) {
+            const publicId = await handleResumeUpload();
+            if (!publicId) {
                 setFormStatus("Failed to upload the resume. Please try again.");
                 return;
             }
+    
+            // Construct the public URL
+            const resumeUrl = constructPublicUrl(publicId);
     
             // Send email via EmailJS with resume URL
             await emailjs.send(
@@ -66,19 +75,20 @@ const CareerForm = () => {
                 'template_yq9t9a2', // Replace with your EmailJS Template ID
                 {
                     ...data,
-                    resume: resumeUrl, // Include the resume URL in the email
-                    subject: "Job Candidate", // Include the subject
+                    resume: resumeUrl, // Send the constructed URL
+                    subject: "Job Candidate", // Include subject
                 },
                 'tZxQ2uZY_Jj2DYBWm' // Replace with your EmailJS User ID
             );
     
             setFormStatus("Your application has been submitted successfully!");
-            router.push('/thankyou'); // Redirect to the thank-you page
+            router.push('/thankyou'); // Redirect to the thank you page
         } catch (error) {
             console.error(error);
             setFormStatus("Failed to submit the application. Please try again.");
         }
     };
+    
 
     return (
         <div className="w-full max-w-7xl mx-auto py-24">
