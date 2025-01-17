@@ -61,25 +61,21 @@ const LandingPageHeroSection = ({ slides = [] }) => {
           </p>
           {showButtons && (
             <div className="flex flex-row gap-4 justify-center lg:justify-start">
-              <Link href="/case-studies">
-                <button
-                  className={`px-6 py-3 text-sm sm:text-base rounded-full font-medium transform transition-transform duration-300 hover:scale-105 shadow-md ${button1Color} ${button1HoverColor}`}
-                >
-                  {button1Text}
-                </button>
-              </Link>
-              <Link href="/contact-us">
-                <button
-                  className="px-6 py-3 text-sm sm:text-base rounded-full font-medium text-white shadow-md transform transition-transform duration-300 hover:scale-105"
-                  style={{
-                    backgroundImage: button2Gradient
-                      ? `linear-gradient(${button2Gradient})`
-                      : "none",
-                  }}
-                >
-                  {button2Text}
-                </button>
-              </Link>
+              <button
+                className={`px-6 py-3 text-sm sm:text-base rounded-full font-medium transform transition-transform duration-300 hover:scale-105 shadow-md ${button1Color} ${button1HoverColor}`}
+              >
+                {button1Text}
+              </button>
+              <button
+                className="px-6 py-3 text-sm sm:text-base rounded-full font-medium text-white shadow-md transform transition-transform duration-300 hover:scale-105"
+                style={{
+                  backgroundImage: button2Gradient
+                    ? `linear-gradient(${button2Gradient})`
+                    : "none",
+                }}
+              >
+                {button2Text}
+              </button>
             </div>
           )}
         </div>
