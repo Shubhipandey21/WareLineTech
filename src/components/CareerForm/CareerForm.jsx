@@ -28,24 +28,28 @@ const CareerForm = () => {
             setFormData({ ...formData, [name]: value });
         }
     };
-
+    console.log("Form State Before Submission:", formData);
     const handleResumeUpload = async () => {
-        const formData = new FormData();
-        formData.append("file", formData.resume);
-        formData.append("upload_preset", "warelineTech"); // Replace with your Cloudinary preset
-        formData.append("cloud_name", "warelineTech"); // Replace with your Cloudinary cloud name
-
+        const uploadData = new FormData(); // Use a different name here
+        uploadData.append("file", formData.resume); // Append the resume file
+        uploadData.append("upload_preset", "warelineTech"); // Replace with your Cloudinary preset
+        uploadData.append("cloud_name", "dwm3rq1ve"); // Replace with your Cloudinary cloud name
+        console.log("File to Upload:", formData.resume);
+        console.log("Uploading to Cloudinary...");
         try {
             const response = await axios.post(
-                "https://api.cloudinary.com/v1_1/your_cloud_name/image/upload", 
-                formData
+                "https://api.cloudinary.com/v1_1/dwm3rq1ve/image/upload",
+                uploadData
             );
+            console.log("Cloudinary Response:", response.data);
             return response.data.secure_url; // Return the uploaded file URL
         } catch (error) {
             console.error("Error uploading file", error);
             return null;
         }
+        
     };
+    
 
     const onSubmit = async (data) => {
         try {
@@ -55,20 +59,21 @@ const CareerForm = () => {
                 setFormStatus("Failed to upload the resume. Please try again.");
                 return;
             }
-
+    
             // Send email via EmailJS with resume URL
             await emailjs.send(
                 'myth', // Replace with your EmailJS Service ID
                 'template_yq9t9a2', // Replace with your EmailJS Template ID
                 {
                     ...data,
-                    resume: resumeUrl, // Send the URL of the uploaded resume
+                    resume: resumeUrl, // Include the resume URL in the email
+                    subject: "Job Candidate", // Include the subject
                 },
                 'tZxQ2uZY_Jj2DYBWm' // Replace with your EmailJS User ID
             );
-
+    
             setFormStatus("Your application has been submitted successfully!");
-            router.push('/thankyou'); // Redirect to the thank you page
+            router.push('/thankyou'); // Redirect to the thank-you page
         } catch (error) {
             console.error(error);
             setFormStatus("Failed to submit the application. Please try again.");
