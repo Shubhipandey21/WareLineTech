@@ -1,4 +1,5 @@
 'use client'
+
 import React, { useState } from "react";
 import HeroSection from "@/components/HeroSection/HeroSection";
 import Card from "@/components/Card/Card";
