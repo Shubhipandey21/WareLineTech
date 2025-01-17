@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import emailjs from 'emailjs-com';
 import { useRouter } from 'next/navigation';
+import axios from 'axios'; // For making API requests
 
 const CareerForm = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -14,22 +15,54 @@ const CareerForm = () => {
         email: '',
         phone: '',
         message: '',
+        resume: null,
     });
     const router = useRouter();
     const [formStatus, setFormStatus] = useState(""); // Feedback message
 
     const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
+        const { name, value, files } = e.target;
+        if (name === "resume") {
+            setFormData({ ...formData, resume: files[0] });
+        } else {
+            setFormData({ ...formData, [name]: value });
+        }
+    };
+
+    const handleResumeUpload = async () => {
+        const formData = new FormData();
+        formData.append("file", formData.resume);
+        formData.append("upload_preset", "warelineTech"); // Replace with your Cloudinary preset
+        formData.append("cloud_name", "warelineTech"); // Replace with your Cloudinary cloud name
+
+        try {
+            const response = await axios.post(
+                "https://api.cloudinary.com/v1_1/your_cloud_name/image/upload", 
+                formData
+            );
+            return response.data.secure_url; // Return the uploaded file URL
+        } catch (error) {
+            console.error("Error uploading file", error);
+            return null;
+        }
     };
 
     const onSubmit = async (data) => {
         try {
+            // Upload resume first
+            const resumeUrl = await handleResumeUpload();
+            if (!resumeUrl) {
+                setFormStatus("Failed to upload the resume. Please try again.");
+                return;
+            }
+
+            // Send email via EmailJS with resume URL
             await emailjs.send(
                 'myth', // Replace with your EmailJS Service ID
                 'template_yq9t9a2', // Replace with your EmailJS Template ID
                 {
                     ...data,
+                    resume: resumeUrl, // Send the URL of the uploaded resume
                 },
                 'tZxQ2uZY_Jj2DYBWm' // Replace with your EmailJS User ID
             );
@@ -92,7 +125,7 @@ const CareerForm = () => {
                             ))}
                         </div>
 
-                        {/* Minimal Resume Section */}
+                        {/* Resume Section */}
                         <div className="relative space-y-2">
                             <input
                                 {...register("resume", { required: "Resume is required" })}
@@ -101,6 +134,7 @@ const CareerForm = () => {
                                 accept=".pdf,.doc,.docx"
                                 id="resume" // Add an id to the file input
                                 className="hidden" // Hide the default file input
+                                onChange={handleInputChange}
                             />
                             <label
                                 htmlFor="resume" // This links the label to the file input by matching the id
@@ -111,8 +145,6 @@ const CareerForm = () => {
                             <div className="w-full border-b border-gray-300 mt-1"></div>
                             {errors.resume && <span className="text-red-500 text-sm">{errors.resume.message}</span>}
                         </div>
-
-
 
                         <div className="relative space-y-2">
                             <textarea
