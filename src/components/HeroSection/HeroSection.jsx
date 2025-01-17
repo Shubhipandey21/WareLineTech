@@ -11,7 +11,7 @@ const HeroSection = ({
   floatingImages = [],
 }) => {
   return (
-    <section className="relative min-h-[120vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Background with gradient overlay */}
       <div className="absolute inset-0">
         <img

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link'; // Import Link from next/link
 
 const LandingPageHeroSection = ({ slides = [] }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -60,21 +61,25 @@ const LandingPageHeroSection = ({ slides = [] }) => {
           </p>
           {showButtons && (
             <div className="flex flex-row gap-4 justify-center lg:justify-start">
-              <button
-                className={`px-6 py-3 text-sm sm:text-base rounded-full font-medium transform transition-transform duration-300 hover:scale-105 shadow-md ${button1Color} ${button1HoverColor}`}
-              >
-                {button1Text}
-              </button>
-              <button
-                className="px-6 py-3 text-sm sm:text-base rounded-full font-medium text-white shadow-md transform transition-transform duration-300 hover:scale-105"
-                style={{
-                  backgroundImage: button2Gradient
-                    ? `linear-gradient(${button2Gradient})`
-                    : "none",
-                }}
-              >
-                {button2Text}
-              </button>
+              <Link href="/case-studies">
+                <button
+                  className={`px-6 py-3 text-sm sm:text-base rounded-full font-medium transform transition-transform duration-300 hover:scale-105 shadow-md ${button1Color} ${button1HoverColor}`}
+                >
+                  {button1Text}
+                </button>
+              </Link>
+              <Link href="/contact-us">
+                <button
+                  className="px-6 py-3 text-sm sm:text-base rounded-full font-medium text-white shadow-md transform transition-transform duration-300 hover:scale-105"
+                  style={{
+                    backgroundImage: button2Gradient
+                      ? `linear-gradient(${button2Gradient})`
+                      : "none",
+                  }}
+                >
+                  {button2Text}
+                </button>
+              </Link>
             </div>
           )}
         </div>

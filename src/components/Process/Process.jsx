@@ -1,7 +1,7 @@
 import { CheckCircleIcon } from "@heroicons/react/solid";
 export default function Process() {
     return (
-        <div className="bg-gray-900 text-white py-16">
+      <div className="bg-gray-900 text-white py-16 bg-cover bg-center" style={{ backgroundImage: "url('https://i.pinimg.com/736x/56/a0/5c/56a05ce54b5b652f2014af2c22f06415.jpg')" }}>
           <div className="max-w-7xl mx-auto text-center">
             <h2 className="text-sm font-semibold text-indigo-400">YOUR FULL STACK DESIGN AND ENGINEERING PARTNER</h2>
             <p className="mt-4 text-3xl font-bold">

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link"; 
 
 const ContactUsSection = ({
   title,
@@ -42,15 +43,16 @@ const ContactUsSection = ({
             {highlightText}
           </span>
         </p>
-        <button
-          
-          className="px-6 py-3 mt-6 text-white rounded-full focus:outline-none focus:ring-2"
-          style={{
-            backgroundImage: `linear-gradient(to right, ${buttonGradientFrom}, ${buttonGradientTo})`,
-          }}
-        >
-          {buttonText}
-        </button>
+        <Link href="/contact-us">
+          <button
+            className="px-6 py-3 mt-6 text-white rounded-full focus:outline-none focus:ring-2"
+            style={{
+              backgroundImage: `linear-gradient(to right, ${buttonGradientFrom}, ${buttonGradientTo})`,
+            }}
+          >
+            {buttonText}
+          </button>
+        </Link>
       </div>
     </div>
   );
