@@ -134,35 +134,16 @@ const AboutUs = () => {
 
     const teamData = [
       {
-        name: "Vikas Kaushik",
-        title: "CEO",
-        imageUrl: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=600"
-      },
-      {
-        name: "Mukul Mayank",
+        name: "Akul Malhotra",
         title: "COO",
-        imageUrl: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=600"
+        imageUrl: "https://i.pinimg.com/236x/6e/59/95/6e599501252c23bcf02658617b29c894.jpg"
       },
       {
-        name: "Deepak Sinha",
-        title: "CHIEF TECHNOLOGY OFFICER",
-        imageUrl: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=600"
+        name: "Sambhrant Tiwari",
+        title: "CTO",
+        imageUrl: "https://i.pinimg.com/236x/6e/59/95/6e599501252c23bcf02658617b29c894.jpg"
       },
-      {
-        name: "Deepak Sinha",
-        title: "CHIEF TECHNOLOGY OFFICER",
-        imageUrl: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=600"
-      },
-      {
-        name: "Deepak Sinha",
-        title: "CHIEF TECHNOLOGY OFFICER",
-        imageUrl: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=600"
-      },
-      {
-        name: "Shanal Aggarwal",
-        title: "CHIEF COMMERCIAL & CUSTOMER SUCCESS OFFICER",
-        imageUrl: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=600"
-      }
+     
     ];
   
     return (

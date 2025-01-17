@@ -13,10 +13,10 @@ const Team = ({
     descriptionClassName = "text-center text-xl mb-16 text-gray-600",
 
     // Grid props
-    gridClassName = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6",
+    gridClassName = "flex justify-center items-center gap-0", // Center the cards horizontally without gaps
 
     // Card props
-    cardClassName = "bg-blue-50 rounded-3xl p-6 flex flex-col items-center",
+    cardClassName = "bg-blue-50 rounded-3xl p-6 flex flex-col items-center w-[45%] sm:w-[40%] lg:w-[30%] mx-4", // Add some margin between cards
     imageContainerClassName = "w-48 h-48 rounded-full overflow-hidden mb-6 border-2 border-blue-200",
     nameClassName = "text-xl font-bold mb-2",
     titleClassName = "text-sm uppercase text-gray-600 text-center",
@@ -32,7 +32,7 @@ const Team = ({
             <p className={descriptionClassName}>{description}</p>
 
             {/* Team Members Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div className={gridClassName}>
                 {teamMembers.map((member, index) => (
                     <div key={index} className={cardClassName}>
                         {/* Member Image */}
@@ -53,10 +53,8 @@ const Team = ({
                     </div>
                 ))}
             </div>
-
         </section>
     );
 };
-
 
 export default Team;

@@ -1,5 +1,6 @@
 // components/HeroSection.jsx
 import Image from "next/image";
+import Link from "next/link";
 
 const HeroSection2 = ({ 
   backgroundImage, 
@@ -16,21 +17,21 @@ const HeroSection2 = ({
       <div className="max-w-7xl w-full mx-auto flex flex-col lg:flex-row items-center px-6 md:px-12 lg:px-20">
         {/* Left Content */}
         <div className="text-center lg:text-left lg:w-1/2">
-          <nav className="text-gray-500 text-sm mb-4">
-            <span>Home &gt; Industries &gt; </span>
-            <span className="text-black font-medium">Insurtech App Development Company</span>
-          </nav>
+          
           <h1 className="text-5xl md:text-6xl font-bold text-black mb-6 leading-tight">
             {title}
           </h1>
           <p className="text-lg md:text-xl text-gray-700 mb-8">
             {description}
           </p>
+          <Link href="/contact-us">
           <button
             className={`py-3 px-8 text-white font-semibold text-lg rounded-md ${buttonGradient}`}
           >
             Get a Free Quote
           </button>
+          </Link>
+          
         </div>
 
         {/* Right Content */}
