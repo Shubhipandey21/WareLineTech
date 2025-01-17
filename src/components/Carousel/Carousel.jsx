@@ -18,18 +18,21 @@ export default function Carousel({ title, subtitle, data, settings }) {
         breakpoint: 1024, // Medium screens (tablets)
         settings: {
           slidesToShow: 2, // Show 2 items on medium screens
+          arrows: false, // Optional: Hide arrows for better layout on smaller screens
         },
       },
       {
         breakpoint: 768, // Small screens (phones in landscape)
         settings: {
           slidesToShow: 1, // Show 1 item on smaller screens
+          arrows: false,
         },
       },
       {
         breakpoint: 480, // Very small screens (phones in portrait)
         settings: {
           slidesToShow: 1, // Show 1 item on smaller screens
+          arrows: false,
         },
       },
     ],
@@ -48,32 +51,32 @@ export default function Carousel({ title, subtitle, data, settings }) {
               key={index}
               className="flex justify-center"
               style={{
-                padding: "10px 20px", // Padding for spacing between cards
+                padding: "5px", // Reduced padding between cards
               }}
             >
               <div
-                className="bg-gradient-to-b gap-6 from-gray-700 to-slate-800 rounded-md text-center flex flex-col items-center shadow-lg hover:shadow-xl transition-shadow mx-auto"
+                className="bg-gradient-to-b gap-9 from-gray-700 to-slate-800 rounded-md text-center flex flex-col items-center shadow-lg hover:shadow-xl transition-shadow mx-auto"
                 style={{
-                  width: "320px", // Increased card width
-                  height: "400px", // Increased card height
-                  padding: "24px",
+                  width: "360px", // Increased card width
+                  height: "450px", // Increased card height
+                  padding: "32px", // Increased padding inside the cards
                   boxSizing: "border-box",
                 }}
               >
                 <div
                   className="text-center mb-6 flex justify-center items-center"
                   style={{
-                    width: "90px", // Circle diameter
-                    height: "90px", // Circle diameter
+                    width: "100px", // Increased circle diameter
+                    height: "100px", // Increased circle diameter
                     borderRadius: "50%", // Make the div circular
                     backgroundColor: "#2D3748", // Circle background color
-                    fontSize: "2rem", // Icon size (adjust as needed)
+                    fontSize: "2.5rem", // Icon size
                   }}
                 >
                   {item.icon}
                 </div>
                 <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-                <p className="text-sm">{item.description}</p>
+                <p className="text-md">{item.description}</p>
               </div>
             </div>
           ))}
