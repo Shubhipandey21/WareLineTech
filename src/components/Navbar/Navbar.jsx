@@ -67,7 +67,7 @@ const Navbar = () => {
             { name: "Services", route: "/services" },
             { name: "Industries", route: "/industries" },
             { name: "Hire Developers", route: "/hire-developers" },
-            { name: "Company", route: "/company" },
+            { name: "Company", route: "" },
             { name: "Press", route: "/press" },
             { name: "Contact Us", route: "/contact-us" },
           ].map((item) => (
@@ -125,7 +125,7 @@ const Navbar = () => {
                 { name: "Services", route: "/services" },
                 { name: "Industries", route: "/industries" },
                 { name: "Hire Developers", route: "/hire-developers" },
-                { name: "Company", route: "/company" },
+                { name: "Company", route: "" },
                 { name: "Press", route: "/press" },
                 { name: "Contact Us", route: "/contact-us" },
               ].map((item) => (
