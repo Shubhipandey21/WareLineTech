@@ -13,7 +13,7 @@ const HeroSection = ({
   floatingImages = [],
 }) => {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[110vh] flex items-center justify-center overflow-hidden">
       {/* Background with gradient overlay */}
       <div className="absolute inset-0">
         <img
@@ -27,49 +27,50 @@ const HeroSection = ({
       <div className="container mx-auto px-4 py-10 relative z-10">
         <div className="max-w-6xl mx-auto text-center">
           {/* Main Heading */}
-          <h1 className="text-4xl text-black md:text-5xl lg:text-6xl font-bold mb-6">
-            
+          <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-black font-bold mb-6">
             <span className="block mb-2">
-              <span className="inline-block px-4 py-2 text-purple-600 rounded-lg">
+              <span className="inline-block px-4 py-2 text-purple-600 bg-white rounded-lg">
                 {headingHighlight}
               </span>
             </span>
-            <span className="block mb-2">{headingFirstPart}</span>
-            <span className="block text-black">{headingLastPart}</span>
+            <span className="block mb-2 text-xl md:text-2xl lg:text-3xl">
+              {headingFirstPart}
+            </span>
+            <span className="block text-black text-xl md:text-2xl lg:text-3xl">
+              {headingLastPart}
+            </span>
           </h1>
 
           {/* Optional Subtext */}
           {subtext && (
-            <p className="text-lg md:text-xl text-gray-800 mb-8 max-w-3xl mx-auto">
+            <p className="text-base md:text-lg lg:text-xl text-gray-800 mb-8 max-w-3xl mx-auto">
               {subtext}
             </p>
           )}
 
           {/* CTA Button */}
-         <Link href="/services">
-         <button
-            className={`${buttonColor} text-white px-8 py-3 rounded-full font-medium 
-            transform transition-transform duration-300 hover:scale-105 
-            shadow-lg hover:shadow-xl`}
-          >
-            {buttonText}
-          </button>
+          <Link href="/services">
+            <button
+              className={`${buttonColor} text-white px-6 md:px-8 py-2 md:py-3 rounded-full font-medium transform transition-transform duration-300 hover:scale-105 shadow-lg hover:shadow-xl`}
+            >
+              {buttonText}
+            </button>
           </Link>
         </div>
       </div>
 
       {/* Decorative Elements */}
-      <div className="absolute bottom-0 left-0 w-32 h-32 bg-blue-200/30 rounded-full blur-2xl"></div>
-      <div className="absolute top-1/4 right-0 w-40 h-40 bg-purple-200/30 rounded-full blur-2xl"></div>
-      <div className="absolute top-1/3 left-1/4 w-24 h-24 bg-pink-200/30 rounded-full blur-2xl"></div>
+      <div className="absolute bottom-8 left-4 w-16 h-16 md:w-24 md:h-24 bg-blue-200/30 rounded-full blur-2xl"></div>
+      <div className="absolute top-1/4 right-4 w-20 h-20 md:w-28 md:h-28 bg-purple-200/30 rounded-full blur-2xl"></div>
+      <div className="absolute top-1/3 left-1/4 w-12 h-12 md:w-16 md:h-16 bg-pink-200/30 rounded-full blur-2xl"></div>
 
       {/* Floating Images */}
       <div className="absolute w-full h-full">
         {floatingImages.map((image, index) => {
           const positions = [
-            { top: "70%", left: "15%" }, // First image
-            { top: "70%", left: "70%" }, // Second image
-            { top: "78%", left: "45%" }, // Third image
+            { top: "75%", left: "10%" },
+            { top: "80%", left: "60%" },
+            { top: "85%", left: "40%" },
           ];
 
           const { top, left } = positions[index % positions.length];
@@ -79,7 +80,7 @@ const HeroSection = ({
               key={index}
               src={image}
               alt={`Floating Image ${index + 1}`}
-              className="w-24 md:w-32 lg:w-56 h-auto transition-transform transform hover:scale-105 absolute"
+              className="w-16 md:w-24 lg:w-32 h-auto transition-transform transform hover:scale-105 absolute"
               style={{
                 top,
                 left,
