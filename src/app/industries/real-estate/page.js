@@ -76,17 +76,20 @@ const carouselData = [
 
 const faqData = [
   {
-    question: "What services does WarelineTech offer for real estate app development?",
+    question:
+      "What services does WarelineTech offer for real estate app development?",
     answer:
       "WarelineTech offers comprehensive real estate app development services, including property listing platforms, mobile apps, virtual tours, and analytics solutions.",
   },
   {
-    question: "How can real estate app development services benefit my business?",
+    question:
+      "How can real estate app development services benefit my business?",
     answer:
       "Our services help streamline property management, enhance customer engagement, and improve sales by offering innovative and user-friendly solutions.",
   },
   {
-    question: "Do you develop real estate apps for both iOS and Android platforms?",
+    question:
+      "Do you develop real estate apps for both iOS and Android platforms?",
     answer:
       "Yes, WarelineTech develops real estate apps for both iOS and Android platforms, ensuring a seamless experience across all devices.",
   },
@@ -106,12 +109,14 @@ const faqData = [
       "Yes, we specialize in integrating real estate apps with existing platforms, including CRM systems, property management tools, and third-party APIs, to ensure seamless functionality.",
   },
   {
-    question: "What sets WarelineTech apart from other real estate app development companies?",
+    question:
+      "What sets WarelineTech apart from other real estate app development companies?",
     answer:
       "WarelineTech stands out for its focus on innovative solutions, user-centric designs, scalable architecture, and a dedicated team committed to delivering high-quality real estate apps.",
   },
   {
-    question: "Do you offer ongoing support and maintenance for real estate apps?",
+    question:
+      "Do you offer ongoing support and maintenance for real estate apps?",
     answer:
       "Yes, we provide ongoing support and maintenance services to ensure your app remains secure, updated, and fully functional, adapting to evolving market needs.",
   },
@@ -144,11 +149,11 @@ export default function RealEstate() {
   return (
     <>
       <HeroSection2
-        backgroundImage="/IndustriesImg/RealEstateBG.jpeg"
-        buttonGradient="bg-gradient-to-r from-green-400 to-blue-400"
+        backgroundImage="https://images.pexels.com/photos/7130560/pexels-photo-7130560.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        buttonGradient="bg-gradient-to-r from-pink-400 to-violet-400"
         title="Real Estate App Development Company"
         description="Partner with WareLineTech, a leading real estate app development company, to transform your property business, streamline operations, and deliver exceptional experiences to your customers."
-        imageSrc="/IndustriesImg/RealEstateHome.jpeg"
+        imageSrc="https://images.pexels.com/photos/273209/pexels-photo-273209.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
       />
 
       <AboutSection
@@ -174,9 +179,9 @@ export default function RealEstate() {
         description="Reach out to us for more information about our services."
         buttonText="Get in Touch"
         highlightText="today!"
-        highlightGradient={{ from: "#00c6ff", to: "#0072ff" }}
-        buttonGradientFrom="#32cd32"
-        buttonGradientTo="#00bfff"
+        highlightGradient={{ from: "#ec4899", to: "#a78bfa" }}
+        buttonGradientFrom="#ec4899"
+        buttonGradientTo="#a78bfa"
       />
     </>
   );
