@@ -72,7 +72,7 @@ export default function MobileApps() {
   const roadmapData = {
     title: "Redefining User Engagement & Loyalty",
     description:
-      "We at TechAhead are spearheading an AI-powered revolution in mobile app development, leveraging data, user preferences, and technology for sculpting cutting-edge mobile solutions.",
+      "We at WarelineTech are spearheading an AI-powered revolution in mobile app development, leveraging data, user preferences, and technology for sculpting cutting-edge mobile solutions.",
     items: [
       {
         icon: FaEye,

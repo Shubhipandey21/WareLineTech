@@ -44,7 +44,7 @@ const TeamBanner = () => {
       {/* Image Section */}
       <div className="relative">
         <Image
-          src="https://images.pexels.com/photos/3752600/pexels-photo-3752600.jpeg?auto=compress&cs=tinysrgb&w=600"
+          src="/WarelineTechTeam.jpeg"
           alt="Team photo"
           width={1920}
           height={1080}

@@ -55,9 +55,9 @@ export default function HireDevelopers() {
         description="Contact us for any questions or inquiries about our cloud solutions."
         buttonText="Contact Now"
         highlightText="right now!"
-        highlightGradient={{ from: "#00c6ff", to: "#0072ff" }}
-        buttonGradientFrom="#00c6ff"
-        buttonGradientTo="#0072ff"
+        highlightGradient={{ from: "#8b5cf6", to: "#6d28d9" }}
+        buttonGradientFrom="#8b5cf6"
+        buttonGradientTo="#6d28d9"
       />
     </>
   );
