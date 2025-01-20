@@ -13,13 +13,13 @@ const Team = ({
     descriptionClassName = "text-center text-xl mb-16 text-gray-600",
 
     // Grid props
-    gridClassName = "flex justify-center items-center gap-0", // Center the cards horizontally without gaps
+    gridClassName = "flex justify-center items-center gap-4 flex-wrap", // Adjusted for better spacing
 
     // Card props
-    cardClassName = "bg-blue-50 rounded-3xl p-6 flex flex-col items-center w-[45%] sm:w-[40%] lg:w-[30%] mx-4", // Add some margin between cards
-    imageContainerClassName = "w-48 h-48 rounded-full overflow-hidden mb-6 border-2 border-blue-200",
+    cardClassName = "bg-blue-50 rounded-3xl p-6 flex flex-col items-center w-[90%] sm:w-[60%] lg:w-[40%] mx-4", // Adjusted width and spacing
     nameClassName = "text-xl font-bold mb-2",
-    titleClassName = "text-sm uppercase text-gray-600 text-center",
+    titleClassName = "text-sm uppercase font-bold text-gray-600 text-center",
+    descriptionClassNameCard = "text-base text-gray-700 text-center", // Description styling
 
     // Team members data
     teamMembers = []
@@ -35,21 +35,10 @@ const Team = ({
             <div className={gridClassName}>
                 {teamMembers.map((member, index) => (
                     <div key={index} className={cardClassName}>
-                        {/* Member Image */}
-                        <div className={imageContainerClassName}>
-                            {member.imageUrl ? (
-                                <img
-                                    src={member.imageUrl}
-                                    alt={member.name}
-                                    className="w-full h-full object-cover"
-                                />
-                            ) : (
-                                <div className="w-full h-full bg-gray-200" />
-                            )}
-                        </div>
                         {/* Member Info */}
-                        <h4 className={nameClassName}>{member.name}</h4>
-                        <p className={titleClassName}>{member.title}</p>
+                        <h3 className={nameClassName}>{member.name}</h3>
+                        <h4 className={titleClassName}>{member.title}</h4>
+                        <p className={descriptionClassNameCard}>{member.description}</p>
                     </div>
                 ))}
             </div>

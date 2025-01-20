@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-const ImageCarousel = ({ 
+const ImageCarousel = ({
   images,
   autoPlayInterval = 5000,
   className = "w-full relative overflow-hidden",
@@ -9,10 +9,14 @@ const ImageCarousel = ({
   imageClassName = "object-cover rounded-lg shadow-lg",
   buttonClassName = "absolute z-10 p-2 bg-black/50 hover:bg-black/70 text-white rounded-full transition-colors duration-300",
 }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(1); // Start at 1 to account for the duplicated first slide
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
   const [screenSize, setScreenSize] = useState('large');
+
+  // Prepare images with duplicates
+  const extendedImages = [images[images.length - 1], ...images, images[0]];
 
   // Screen size breakpoints
   useEffect(() => {
@@ -25,7 +29,7 @@ const ImageCarousel = ({
         setScreenSize('large');
       }
     };
-    
+
     checkScreenSize();
     window.addEventListener('resize', checkScreenSize);
     return () => window.removeEventListener('resize', checkScreenSize);
@@ -61,12 +65,37 @@ const ImageCarousel = ({
   }, [currentIndex, autoPlayInterval]);
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    if (isTransitioning) return;
+
+    setIsTransitioning(true);
+    setCurrentIndex((prevIndex) => prevIndex + 1);
   };
 
   const handlePrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    if (isTransitioning) return;
+
+    setIsTransitioning(true);
+    setCurrentIndex((prevIndex) => prevIndex - 1);
   };
+
+  // Reset position when reaching duplicate slides
+  useEffect(() => {
+    if (currentIndex === 0) {
+      setTimeout(() => {
+        setIsTransitioning(false);
+        setCurrentIndex(images.length);
+      }, 300); // Match transition duration
+    } else if (currentIndex === extendedImages.length - 1) {
+      setTimeout(() => {
+        setIsTransitioning(false);
+        setCurrentIndex(1);
+      }, 300); // Match transition duration
+    } else {
+      setTimeout(() => {
+        setIsTransitioning(false);
+      }, 300); // Match transition duration
+    }
+  }, [currentIndex, extendedImages.length, images.length]);
 
   // Touch handlers
   const handleTouchStart = (e) => {
@@ -79,7 +108,7 @@ const ImageCarousel = ({
 
   const handleTouchEnd = () => {
     if (!touchStart || !touchEnd) return;
-    
+
     const distance = touchStart - touchEnd;
     const isLeftSwipe = distance > 50;
     const isRightSwipe = distance < -50;
@@ -97,53 +126,33 @@ const ImageCarousel = ({
 
   return (
     <div className={`${className} ${height}`}>
-      <div 
+      <div
         className="h-full w-full"
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
         {/* Images container */}
-        <div 
+        <div
           className="flex h-full transition-transform duration-500 ease-in-out relative"
           style={{
-            transform: `translateX(-${currentIndex * (100 / getVisibleSlides())}%)`
+            transform: `translateX(-${currentIndex * (100 / getVisibleSlides())}%)`,
+            transition: isTransitioning ? 'transform 0.3s ease-in-out' : 'none',
           }}
         >
-          {images.map((src, index) => {
-            // Calculate styles based on position and screen size
-            const isCenter = index === currentIndex;
-            const isAdjacent = (
-              index === (currentIndex + 1) % images.length || 
-              index === (currentIndex - 1 + images.length) % images.length
-            );
-
-            return (
-              <div
-                key={index}
-                className={`
-                  transition-all duration-500
-                  px-2
-                  flex-shrink-0
-                  ${screenSize === 'small' ? 'w-full' : 
-                    screenSize === 'medium' ? 'w-1/3' : 'w-1/5'}
-                  ${screenSize !== 'small' && isCenter ? 'scale-105' : ''}
-                  ${screenSize !== 'small' && isAdjacent ? 'scale-95' : ''}
-                `}
-                style={{ width: `${100 / getVisibleSlides()}%` }}
-              >
-                <img
-                  src={src}
-                  alt={`carousel-image-${index}`}
-                  className={`
-                    w-full h-full
-                    transition-opacity duration-300
-                    ${imageClassName}
-                  `}
-                />
-              </div>
-            );
-          })}
+          {extendedImages.map((src, index) => (
+            <div
+              key={index}
+              className={`px-2 flex-shrink-0`}
+              style={{ width: `${100 / getVisibleSlides()}%` }}
+            >
+              <img
+                src={src}
+                alt={`carousel-image-${index}`}
+                className={`w-full h-full ${imageClassName}`}
+              />
+            </div>
+          ))}
         </div>
 
         {/* Navigation buttons */}
@@ -162,21 +171,6 @@ const ImageCarousel = ({
         >
           <ChevronRight className="w-6 h-6" />
         </button>
-
-        {/* Dots navigation (only for mobile) */}
-        {screenSize === 'small' && (
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-            {images.map((_, index) => (
-              <button
-                key={index}
-                className={`w-2 h-2 rounded-full transition-colors duration-300 
-                  ${currentIndex === index ? 'bg-white' : 'bg-white/50'}`}
-                onClick={() => setCurrentIndex(index)}
-                aria-label={`Go to image ${index + 1}`}
-              />
-            ))}
-          </div>
-        )}
       </div>
     </div>
   );

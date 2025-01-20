@@ -27,16 +27,18 @@ const AboutUs = () => {
 
 
     const imageUrls = [
-        'https://images.pexels.com/photos/845457/pexels-photo-845457.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/354951/pexels-photo-354951.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/845457/pexels-photo-845457.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/354951/pexels-photo-354951.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/845457/pexels-photo-845457.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/354951/pexels-photo-354951.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/845457/pexels-photo-845457.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/354951/pexels-photo-354951.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/845457/pexels-photo-845457.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/354951/pexels-photo-354951.jpeg?auto=compress&cs=tinysrgb&w=600',
+        'https://lh3.googleusercontent.com/p/AF1QipPaNZtmVrxlCdxfyQGz7dLTSj_sbJIUjgddXKpM=s680-w680-h510',
+        'https://lh3.googleusercontent.com/p/AF1QipOwSEHKJ-xiq_VLmMfMRT11GrKadWTLSjepAGBZ=s680-w680-h510',
+        'https://lh3.googleusercontent.com/p/AF1QipMMrKujBu8mg2odbJTDFhhLmpWt9SISEkHM8gfU=s680-w680-h510',
+        'https://lh3.googleusercontent.com/p/AF1QipNidwr9PYFmfSEWufTnd9v0TwjhxIAwwNXTOUMj=s680-w680-h510',
+        'https://lh3.googleusercontent.com/p/AF1QipMiUxZF67BRsV1Go7hSIDKXy3xCxt6KeE_3t4hi=s680-w680-h510',
+        'https://lh3.googleusercontent.com/p/AF1QipNOydCHVDm9dy97EruAthOqk-1-jSP62CC_64OK=s680-w680-h510',
+        'https://lh3.googleusercontent.com/p/AF1QipPaNZtmVrxlCdxfyQGz7dLTSj_sbJIUjgddXKpM=s680-w680-h510',
+        'https://lh3.googleusercontent.com/p/AF1QipOwSEHKJ-xiq_VLmMfMRT11GrKadWTLSjepAGBZ=s680-w680-h510',
+        'https://lh3.googleusercontent.com/p/AF1QipMMrKujBu8mg2odbJTDFhhLmpWt9SISEkHM8gfU=s680-w680-h510',
+        'https://lh3.googleusercontent.com/p/AF1QipNidwr9PYFmfSEWufTnd9v0TwjhxIAwwNXTOUMj=s680-w680-h510',
+        'https://lh3.googleusercontent.com/p/AF1QipMiUxZF67BRsV1Go7hSIDKXy3xCxt6KeE_3t4hi=s680-w680-h510',
+        'https://lh3.googleusercontent.com/p/AF1QipNOydCHVDm9dy97EruAthOqk-1-jSP62CC_64OK=s680-w680-h510',
     ];
 
     const faqData = [
@@ -135,13 +137,13 @@ const AboutUs = () => {
     const teamData = [
       {
         name: "Akul Malhotra",
-        title: "COO",
-        imageUrl: "https://i.pinimg.com/236x/6e/59/95/6e599501252c23bcf02658617b29c894.jpg"
+        title: "CEO",
+        description: `Akul Suhail Malhotra, COO of Wareline Technologies, blends expertise in technology and business, with experience at the US Department of Defense and Apple. Committed to transparency and innovation, he drives strategic growth, redefining application development in India.`
       },
       {
         name: "Sambhrant Tiwari",
         title: "CTO",
-        imageUrl: "https://i.pinimg.com/236x/6e/59/95/6e599501252c23bcf02658617b29c894.jpg"
+        description: "Sambhrant Tiwari, CTO at Wareline Technologies , with valuable industry experience in Android and Flutter development, excels in crafting innovative mobile solutions. His expertise in enhancing user experiences and optimizing performance underscores his dedication to delivering high-quality, impactful applications."
       },
      
     ];

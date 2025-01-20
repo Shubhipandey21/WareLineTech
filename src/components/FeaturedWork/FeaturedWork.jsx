@@ -1,38 +1,48 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import { ArrowRight } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const featuredWorks = [
   {
-    tags: ['AI', 'ClimateTech', 'IoT', 'Mobile App'],
-    title: "We revitalized UK's leading smart home heating control manufacturer by deploying smart IoT solutions, reducing energy bills by 50%",
+    tags: ["AI", "ClimateTech", "IoT", "Mobile App"],
+    title:
+      "We revitalized UK's leading smart home heating control manufacturer by deploying smart IoT solutions, reducing energy bills by 50%",
     metrics: [
-      { value: '50%', label: 'Reduction in energy bills' },
-      { value: '15 times', label: 'More engagement triggered' },
-      { value: '32 zones', label: 'Facilitated via mobile app, covering the entire home' },
+      { value: "50%", label: "Reduction in energy bills" },
+      { value: "15 times", label: "More engagement triggered" },
+      {
+        value: "32 zones",
+        label: "Facilitated via mobile app, covering the entire home",
+      },
     ],
-    image: 'https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image:
+      "https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
   {
-    tags: ['EdTech', 'Web App', 'SaaS', 'Analytics'],
-    title: 'Enabled the growth of an EdTech startup by creating an advanced SaaS platform, delivering 10x scalability.',
+    tags: ["EdTech", "Web App", "SaaS", "Analytics"],
+    title:
+      "Enabled the growth of an EdTech startup by creating an advanced SaaS platform, delivering 10x scalability.",
     metrics: [
-      { value: '10x', label: 'Scalability achieved' },
-      { value: '98%', label: 'Reduction in manual effort' },
-      { value: '100k+', label: 'Active users onboarded' },
+      { value: "10x", label: "Scalability achieved" },
+      { value: "98%", label: "Reduction in manual effort" },
+      { value: "100k+", label: "Active users onboarded" },
     ],
-    image: 'https://images.pexels.com/photos/3184421/pexels-photo-3184421.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image:
+      "https://images.pexels.com/photos/3184421/pexels-photo-3184421.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
   {
-    tags: ['FinTech', 'Blockchain', 'Mobile App'],
-    title: 'Built a secure blockchain-based FinTech app, streamlining international payments with enhanced transparency.',
+    tags: ["FinTech", "Blockchain", "Mobile App"],
+    title:
+      "Built a secure blockchain-based FinTech app, streamlining international payments with enhanced transparency.",
     metrics: [
-      { value: '70%', label: 'Reduction in transaction time' },
-      { value: '30%', label: 'Cost savings on fees' },
-      { value: '24/7', label: 'Cross-border transaction support' },
+      { value: "70%", label: "Reduction in transaction time" },
+      { value: "30%", label: "Cost savings on fees" },
+      { value: "24/7", label: "Cross-border transaction support" },
     ],
-    image: 'https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image:
+      "https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
 ];
 
@@ -62,7 +72,7 @@ const FeaturedWork = () => {
           FEATURED WORK
         </h2>
         <div className="text-3xl font-bold mb-4">
-          Discover how we{' '}
+          Discover how we{" "}
           <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
             transform visions into digital realities,
           </span>
@@ -106,10 +116,12 @@ const FeaturedWork = () => {
             </div>
 
             {/* Case Study Button */}
-            <button className="inline-flex items-center text-purple-600 hover:text-purple-700 font-semibold">
-              Case Study
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </button>
+            <Link href="/case-studies" passHref>
+  <button className="inline-flex items-center text-purple-600 hover:text-purple-700 font-semibold">
+    Case Study
+    <ArrowRight className="ml-2 h-4 w-4" />
+  </button>
+</Link>
           </div>
 
           {/* Right Image */}
@@ -130,8 +142,8 @@ const FeaturedWork = () => {
               onClick={() => selectSlide(index)}
               className={`w-3 h-3 rounded-full ${
                 index === currentSlide
-                  ? 'bg-purple-600'
-                  : 'bg-gray-300 hover:bg-purple-400'
+                  ? "bg-purple-600"
+                  : "bg-gray-300 hover:bg-purple-400"
               }`}
             />
           ))}

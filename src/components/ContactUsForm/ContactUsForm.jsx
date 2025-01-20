@@ -139,24 +139,12 @@ const ContactForm = () => {
                 </div>
 
                 <div className="w-full md:w-auto space-y-4">
-                    <h3 className="text-lg font-bold">USA</h3>
-                    <div className="space-y-2 text-gray-600">
-                        <p>123456 Roadside Dr, ABC 123,</p>
-                        <p>Agoura Hills, New York 123456</p>
-                        <a href="tel:+18183180727" className="block hover:text-gray-800">
-                            +1 (818) 9090909090
-                        </a>
-                    </div>
-                </div>
-
-                <div className="w-full md:w-auto space-y-4">
                     <h3 className="text-lg font-bold">INDIA</h3>
                     <div className="space-y-2 text-gray-600">
-                        <p>Floor 77, Tower CC, Noida TwoTwo,</p>
-                        <p>Sector 62, Noida, Delhi-NCR 201309</p>
-                        <a href="tel:+9190909090" className="block hover:text-gray-800">
-                            +91 9090909090
-                        </a>
+                        <p>Wareline Technologies, 4th Floor,</p>
+                        <p>Plot No. - D-176, Phase 8 B, Industrial Area,</p>
+                        <p>Sector 74, Mohali, Punjab, 140501</p>
+                        
                     </div>
                 </div>
             </div>

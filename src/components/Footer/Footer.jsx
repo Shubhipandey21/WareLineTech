@@ -50,13 +50,13 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/services/enterprise-app" className="hover:text-blue-600">
+                <Link href="/services/enterprise-solutions" className="hover:text-blue-600">
                   Enterprise App Development
                 </Link>
               </li>
              
               <li>
-                <Link href="/services/ios" className="hover:text-blue-600">
+                <Link href="/services/iOS" className="hover:text-blue-600">
                   iOS App Development
                 </Link>
               </li>
@@ -93,7 +93,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/industries/ecommerce" className="hover:text-blue-600">
+                <Link href="/industries/e-commerce" className="hover:text-blue-600">
                   E-Commerce
                 </Link>
               </li>
@@ -123,7 +123,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/industries/Hospitality" className="hover:text-blue-600">
+                <Link href="/industries/hospitality" className="hover:text-blue-600">
                  Hospitality
                 </Link>
               </li>

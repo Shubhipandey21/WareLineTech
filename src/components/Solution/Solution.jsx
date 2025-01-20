@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const Solution = () => {
   const solutions = [
@@ -67,12 +68,14 @@ const Solution = () => {
               {solution.description}
             </p>
             <div className="flex justify-center">
-              <button className="inline-flex items-center text-purple-600 hover:text-purple-700 font-semibold transition-colors duration-200">
-                Get started
-                <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
+            <Link href="/services" passHref>
+  <button className="inline-flex items-center text-purple-600 hover:text-purple-700 font-semibold transition-colors duration-200">
+    Get started
+    <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+    </svg>
+  </button>
+</Link>
             </div>
           </div>
         ))}
