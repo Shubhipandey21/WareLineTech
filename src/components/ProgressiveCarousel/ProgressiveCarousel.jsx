@@ -13,26 +13,23 @@ const ProgressiveCarousel = ({
   const [currentIndex, setCurrentIndex] = useState(0); // Tracks the current slide
   const [progress, setProgress] = useState(0); // Tracks the progress bar
   const [isAnimating, setIsAnimating] = useState(true); // Ensures smooth transitions
-
   useEffect(() => {
     // Function to handle slide transition
     const transitionSlide = () => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length); // Move to the next slide or loop back
-      setProgress(0); // Reset progress bar
     };
-
+  
     if (isAnimating) {
+      let progress = 0; // Local progress state
       const progressInterval = setInterval(() => {
-        setProgress((prev) => {
-          const nextProgress = prev + (100 / (duration / 50)); // Smoothly increase progress
-          if (nextProgress >= 100) {
-            transitionSlide(); // Move to the next slide when progress reaches 100%
-            return 0; // Reset progress
-          }
-          return nextProgress; // Increment progress
-        });
+        progress += 100 / (duration / 50); // Increment progress locally
+        if (progress >= 100) {
+          progress = 0; // Reset progress locally
+          transitionSlide(); // Move to the next slide
+        }
+        setProgress(progress); // Update the progress state
       }, 50);
-
+  
       return () => clearInterval(progressInterval); // Cleanup interval on unmount
     }
   }, [data.length, duration, isAnimating]);
