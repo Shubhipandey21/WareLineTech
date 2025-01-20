@@ -156,31 +156,31 @@ export default function WebApps() {
       title: "Artificial Intelligence",
       description:
         "Enhancing web apps with AI to automate tasks and predict user behavior.",
-      image: "/ServicesImages/WebAppsImg/AIWebApp.png", // Replace with actual image paths
+      image: "https://i.pinimg.com/736x/fc/d8/31/fcd8310354601ee5a6f161324cee0ada.jpg", // Replace with actual image paths
     },
     {
       title: "Cloud Computing",
       description:
         "Leveraging cloud technologies for scalable and secure web apps.",
-      image: "/ServicesImages/WebAppsImg/CloudWebApp.png",
+      image: "https://i.pinimg.com/736x/51/75/f2/5175f2a55bc8d44fc4c1b132477ac3ff.jpg",
     },
     {
       title: "Internet of Things",
       description:
         "Integrating IoT for real-time data and control from web apps.",
-      image: "/ServicesImages/WebAppsImg/IOTWebApp.png",
+      image: "https://i.pinimg.com/736x/67/37/2f/67372feaf379406aeaa4bfde4d8b8318.jpg",
     },
     {
       title: "Augmented Reality (AR)",
       description:
         "Delivering immersive AR experiences directly through your browser.",
-      image: "/ServicesImages/WebAppsImg/ARWebApp.png",
+      image: "https://i.pinimg.com/474x/f8/d2/f2/f8d2f2a04b9d567a67bd17e0fe59664b.jpg",
     },
     {
       title: "Blockchain",
       description:
         "Incorporating blockchain technology into web apps for secure transactions.",
-      image: "/ServicesImages/WebAppsImg/BlockchainWebApp.png",
+      image: "https://i.pinimg.com/736x/f0/ad/cf/f0adcfdc5a372181f4358be3cb330af2.jpg",
     },
   ];
 
@@ -215,7 +215,7 @@ export default function WebApps() {
         buttonGradient="bg-gradient-to-r from-blue-400 to-gray-900"
         title="Your Trusted Web App Development Partner"
         description="From custom websites to scalable web apps, we offer end-to-end solutions that drive your business forward."
-        imageSrc="/ServicesImages/WebAppImg/WebAppHero.png"
+        imageSrc="https://images.pexels.com/photos/16129703/pexels-photo-16129703/free-photo-of-man-coding-on-computers-sitting-at-desk.jpeg"
       />
       <AboutSection
         heading="Partner with WarelineTech for Exceptional Web Development"

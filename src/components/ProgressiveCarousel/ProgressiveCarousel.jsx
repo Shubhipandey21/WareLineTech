@@ -17,20 +17,21 @@ const ProgressiveCarousel = ({
   useEffect(() => {
     // Function to handle slide transition
     const transitionSlide = () => {
-      setProgress(0); // Reset progress bar
       setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length); // Move to the next slide or loop back
+      setProgress(0); // Reset progress bar
     };
 
     if (isAnimating) {
       const progressInterval = setInterval(() => {
         setProgress((prev) => {
-          if (prev >= 100) {
+          const nextProgress = prev + (100 / (duration / 50)); // Smoothly increase progress
+          if (nextProgress >= 100) {
             transitionSlide(); // Move to the next slide when progress reaches 100%
             return 0; // Reset progress
           }
-          return prev + 1; // Increment progress
+          return nextProgress; // Increment progress
         });
-      }, duration / 100);
+      }, 50);
 
       return () => clearInterval(progressInterval); // Cleanup interval on unmount
     }
