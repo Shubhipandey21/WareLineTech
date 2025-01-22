@@ -24,8 +24,8 @@ const ContactForm = () => {
     const onSubmit = async (data) => {
         try {
             const result = await emailjs.send(
-                'myth', // Replace with your EmailJS Service ID
-                'template_yq9t9a2', // Replace with your EmailJS Template ID
+                `${process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID}`, // Replace with your EmailJS Service ID
+                `${process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID}`, // Replace with your EmailJS Template ID
                 {
                     firstName: data.firstName,
                     lastName: data.lastName,
@@ -34,7 +34,7 @@ const ContactForm = () => {
                     phone: data.phone,
                     message: data.message
                 },
-                'tZxQ2uZY_Jj2DYBWm' // Replace with your EmailJS User ID
+                `${process.env.NEXT_PUBLIC_EMAILJS_USER_ID}` // Replace with your EmailJS User ID
             );
             console.log(result.text); // For debugging
             console.log('Your message has been sent successfully!');

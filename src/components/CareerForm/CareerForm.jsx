@@ -1,5 +1,6 @@
 'use client';
 
+
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import emailjs from 'emailjs-com';
@@ -33,12 +34,12 @@ const CareerForm = () => {
     const handleResumeUpload = async () => {
         const uploadData = new FormData(); 
         uploadData.append("file", formData.resume); // Append the resume file
-        uploadData.append("upload_preset", "warelineTech"); // Replace with your Cloudinary preset
-        uploadData.append("cloud_name", "dwm3rq1ve"); // Replace with your Cloudinary cloud name
+        uploadData.append("upload_preset", `${process.env.NEXT_PUBLIC_CLOUDINARY_PRESET}`); // Replace with your Cloudinary preset
+        uploadData.append("cloud_name", `${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}`); // Replace with your Cloudinary cloud name
     
         try {
             const response = await axios.post(
-                "https://api.cloudinary.com/v1_1/dwm3rq1ve/auto/upload", // Use 'auto' for all resource types
+                `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/auto/upload`, // Use 'auto' for all resource types
                 uploadData
             );
             console.log("Cloudinary Response:", response.data);
@@ -54,7 +55,7 @@ const CareerForm = () => {
     
 
     const constructPublicUrl = (publicId) => {
-        return `https://res.cloudinary.com/dwm3rq1ve/image/upload/f_auto,q_auto/${publicId}`;
+        return `https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,q_auto/${publicId}`
     };
     
     const onSubmit = async (data) => {
@@ -71,14 +72,14 @@ const CareerForm = () => {
     
             // Send email via EmailJS with resume URL
             await emailjs.send(
-                'myth', // Replace with your EmailJS Service ID
-                'template_yq9t9a2', // Replace with your EmailJS Template ID
+                `${process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID}`, // Replace with your EmailJS Service ID
+                `${process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID}`, // Replace with your EmailJS Template ID
                 {
                     ...data,
                     resume: resumeUrl, // Send the constructed URL
                     subject: "Job Candidate", // Include subject
                 },
-                'tZxQ2uZY_Jj2DYBWm' // Replace with your EmailJS User ID
+                `${process.env.NEXT_PUBLIC_EMAILJS_USER_ID}` // Replace with your EmailJS User ID
             );
     
             setFormStatus("Your application has been submitted successfully!");

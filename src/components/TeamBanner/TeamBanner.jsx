@@ -42,15 +42,7 @@ const TeamBanner = () => {
       </div>
 
       {/* Image Section */}
-      <div className="relative">
-        <Image
-          src="/WarelineTechTeam.jpeg"
-          alt="Team photo"
-          width={1920}
-          height={1080}
-          className="w-full h-auto"
-        />
-      </div>
+      
     </div>
   );
 };
